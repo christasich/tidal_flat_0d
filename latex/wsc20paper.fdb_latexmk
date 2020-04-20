@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex wsc20paper"] 1583334381 "wsc20paper.aux" "wsc20paper.bbl" "wsc20paper" 1583334419
+["bibtex wsc20paper"] 1586293775 "wsc20paper.aux" "wsc20paper.bbl" "wsc20paper" 1586293785
   "./wsc.bst" 1583268556 40357 4f9fde902ca278e3d22ef8a62d5d1096 ""
   "dissertation_proposal.bib" 1583272429 106151 af2624f7dec8c7d8eacff26239977c6e ""
-  "wsc20paper.aux" 1583334419 9381 07eb154e5e70e5792bca956906974d3e "pdflatex"
+  "wsc20paper.aux" 1586293785 7519 e029695a5f0b9b577564bf1a295d14de "pdflatex"
   (generated)
   "wsc20paper.blg"
   "wsc20paper.bbl"
-["pdflatex"] 1583334417 "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.tex" "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.pdf" "wsc20paper" 1583334419
+["pdflatex"] 1586293783 "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.tex" "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.pdf" "wsc20paper" 1586293785
   "../figures/dZ.jpg" 1581377790 97298 f918fefc9cd6f062594ea7ec5917337a ""
   "../figures/map.png" 1581377791 6248220 c21b6eab0d334bc7edfdea81bdb88383 ""
   "../figures/sens_mc.jpg" 1581377790 24070 0cd02f37ef2d87b8b1b8e8f35dc7db43 ""
-  "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.aux" 1583334419 9381 07eb154e5e70e5792bca956906974d3e ""
-  "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.tex" 1583334414 26577 c541ed9f6f1d82a688e60d43c6be3534 ""
+  "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.aux" 1586293785 7519 e029695a5f0b9b577564bf1a295d14de ""
+  "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.tex" 1586293782 22763 86be05678c026a70763a502c148a4357 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -148,17 +148,17 @@
   "/usr/local/texlive/2019/texmf.cnf" 1581652245 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "fancyhdr.sty" 1583268556 21000 64d432ba2d4d4bc59af012a9176c4d30 ""
   "wsc.sty" 1583268556 14796 9833cb5c2bce20ecd33e5bd624e8d4c6 ""
-  "wsc20paper.aux" 1583334419 9381 07eb154e5e70e5792bca956906974d3e "pdflatex"
-  "wsc20paper.bbl" 1583334381 11328 6e065629243f03299c14f9707339fe65 "bibtex wsc20paper"
-  "wsc20paper.out" 1583334419 1093 d3fe4f838c795a00509c4705b8d0b4c3 "pdflatex"
-  "wsc20paper.tex" 1583334414 26577 c541ed9f6f1d82a688e60d43c6be3534 ""
+  "wsc20paper.aux" 1586293785 7519 e029695a5f0b9b577564bf1a295d14de "pdflatex"
+  "wsc20paper.bbl" 1586293776 8632 a3dadda04a484af2e80979bb757e8a73 "bibtex wsc20paper"
+  "wsc20paper.out" 1586293785 690 7f962fa958ffbce8fadce01266d9c6b2 "pdflatex"
+  "wsc20paper.tex" 1586293782 22763 86be05678c026a70763a502c148a4357 ""
   "wscbib.tex" 1583268556 4532 fbf69177c8c97c118d41ecb0dce98e43 ""
   "wscpaperproc.cls" 1583268556 742 d25f0337f8c97714eab29f444c7e8ef2 ""
   "wscsetup.sty" 1583268556 3437 e1f836e4145ccabd091b9fe5b8aedd80 ""
   (generated)
-  "wsc20paper.pdf"
-  "wsc20paper.log"
   "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.pdf"
-  "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.log"
-  "wsc20paper.out"
   "wsc20paper.aux"
+  "wsc20paper.out"
+  "wsc20paper.log"
+  "wsc20paper.pdf"
+  "/home/chris/projects/tidal_flat_0d/latex/wsc20paper.log"

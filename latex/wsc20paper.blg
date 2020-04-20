@@ -3,48 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: wsc20paper.aux
 The style file: wsc.bst
 Database file #1: dissertation_proposal.bib
-Warning--no number and no volume in hoegh-guldbergImpacts5CGlobal2018
 Warning--no number and no volume in huqSeaLevelRiseBangladesh1995
 Warning--empty organization in kroneMethodSimulatingMarsh1987
-You've used 24 entries,
+You've used 22 entries,
             2956 wiz_defined-function locations,
-            820 strings with 13576 characters,
-and the built_in function-call counts, 24282 in all, are:
-= -- 1739
-> -- 2647
-< -- 3
-+ -- 861
-- -- 913
-* -- 2583
-:= -- 4589
-add.period$ -- 87
-call.type$ -- 24
-change.case$ -- 238
-chr.to.int$ -- 24
-cite$ -- 27
-duplicate$ -- 435
-empty$ -- 1048
-format.name$ -- 969
-if$ -- 4439
+            806 strings with 11197 characters,
+and the built_in function-call counts, 16576 in all, are:
+= -- 1402
+> -- 1268
+< -- 2
++ -- 381
+- -- 429
+* -- 1565
+:= -- 2989
+add.period$ -- 79
+call.type$ -- 22
+change.case$ -- 150
+chr.to.int$ -- 22
+cite$ -- 24
+duplicate$ -- 401
+empty$ -- 974
+format.name$ -- 481
+if$ -- 3143
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 20
-newline$ -- 155
-num.names$ -- 241
-pop$ -- 185
+missing$ -- 19
+newline$ -- 142
+num.names$ -- 221
+pop$ -- 102
 preamble$ -- 1
-purify$ -- 403
+purify$ -- 301
 quote$ -- 0
-skip$ -- 456
+skip$ -- 422
 stack$ -- 0
-substring$ -- 876
-swap$ -- 137
-text.length$ -- 3
+substring$ -- 827
+swap$ -- 127
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 576
-warning$ -- 3
-while$ -- 223
+type$ -- 528
+warning$ -- 2
+while$ -- 206
 width$ -- 0
-write$ -- 376
-(There were 3 warnings)
+write$ -- 343
+(There were 2 warnings)
