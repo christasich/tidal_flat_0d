@@ -1,3 +1,5 @@
+library.path <- .libPaths("/home/chris/R/x86_64-pc-linux-gnu-library/3.6")
+library("tsibble", lib.loc = library.path)
 library(lubridate)
 library(tidyverse)
 library(tsibble)
