@@ -1,0 +1,133 @@
+\documentclass[9pt,twocolumn,twoside,lineno]{pnas-new}
+% Use the lineno option to display guide line numbers if required.
+
+% Preamble
+% \usepackage{geometry}
+% \usepackage[utf8]{inputenc}
+% \usepackage{fancyhdr}
+% \usepackage{float}
+% \usepackage{afterpage}
+% \usepackage{caption}
+% \usepackage{subcaption}
+% \usepackage{wrapfig}
+
+
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{siunitx}
+% \usepackage{jabbrv}
+
+% Document parameters
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\foot{ft}
+
+\templatetype{pnasresearcharticle} % Choose template 
+% {pnasresearcharticle} = Template for a two-column research article
+% {pnasmathematics} %= Template for a one-column mathematics article
+% {pnasinvited} %= Template for a PNAS invited submission
+
+\title{Sediment model manuscript}
+
+% Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
+\author[a,1]{Christopher M. Tasich}
+\author[a,2]{Jonathan Gilligan}
+\author[a,3]{Steven L. Goodbred}
+
+\affil[a]{Vanderbilt University}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Tasich} 
+
+% Please add a significance statement to explain the relevance of your work
+\significancestatement{Authors must submit a 120-word maximum statement about the significance of their research paper written at a level understandable to an undergraduate educated scientist outside their field of speciality. The primary goal of the significance statement is to explain the relevance of the work in broad context to a broad readership. The significance statement appears in the paper itself and is required for all research papers.}
+
+% Please include corresponding author, author contribution and author declaration information
+\authorcontributions{Please provide details of author contributions here.}
+\authordeclaration{The authors declare no conflict of interest.}
+\correspondingauthor{\textsuperscript{1}To whom correspondence should be addressed. E-mail: chris.tasich\@vanderbilt.edu}
+
+% At least three keywords are required at submission. Please provide three to five keywords, separated by the pipe symbol.
+\keywords{aggradation $|$ sea level rise $|$ wetland} 
+
+\begin{abstract}
+Please provide an abstract of no more than 250 words in a single paragraph. Abstracts should explain to the general reader the major contributions of the article. References in the abstract must be cited in full within the abstract itself and cited in the text.
+\end{abstract}
+
+\dates{This manuscript was compiled on \today}
+\doi{\url{www.pnas.org/cgi/doi/10.1073/pnas.XXXXXXXXXX}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+\dropcap{T}his PNAS journal template is provided to help you write your work in the correct journal format. Instructions for use are provided below. 
+
+Note: please start your introduction without including the word ``Introduction'' as a section heading (except for math articles in the Physical Sciences section); this heading is implied in the first paragraphs. 
+\section*{Model design}
+
+\subsection*{Numerical model}
+
+We modeled tidal platform elevation ($\zeta$) using a zero-dimensional mass balance model using the basic formulation provided by Krone \cite{krone_method_1987} and further refined by Allen \cite{allen_salt-marsh_1990}, French \cite{french_numerical_1993}, and Temmerman et al. \cite{temmerman_modelling_2003,temmerman_modelling_2004}. The rate of tidal platform elevation change is described as
+\begin{equation}\label{mass_bal_eq}
+	\frac{d \zeta}{d t} = \frac{d S_M}{d t} + \frac{d S_O}{d t} + \frac{d P}{d t} + \frac{d M}{d t},
+\end{equation}
+where $S_M$ is mineral sedimentation, $S_O$ is organic matter sedimentation, $P$ is compaction, and $M$ is tectonic subsidence. Each term of equation \ref{mass_bal_eq} can be further expanded.
+
+We approximate $S_M$ as
+\begin{equation}\label{min_sed_eq}
+	S_M(t) = \int{\frac{w_{s}C(t)}{\rho_b}dt},
+\end{equation}
+where $w_s$ is the characteristic settling velocity of a given grain size, $C(t)$ is the depth-averaged and time-varying sediment concentration in the water column, and $\rho_b$ is the dry bulk density of the sediment. We assume there is no resuspension of mineral sediment which is consistent with Krone's \cite{krone_method_1987} initial formulation.
+
+$w_s$ is calculated for a given grain size by using Stokes' law to determine the terminal velocity of a sphere falling through a fluid given by
+\begin{equation}\label{ws_eq}
+	w_s =  \frac{2}{9}\frac{\rho_p - \rho_f}{\mu}gR^2
+\end{equation}
+
+where $\rho_p$ is the mass density of the particle or grain, $\rho_f$ is the mass density of the fluid, $\mu$ is the dynamic viscosity of the fluid, $g$ is the acceleration due to gravity, and $R$ is the radius of the grain. This is approximation for $w_s$ is consistent with previous similar studies \cite{allen_salt-marsh_1990,temmerman_modelling_2003,temmerman_modelling_2004}. We assume basic properties of water for $\rho_f$ (\SI{1000}{\kilo\gram\per\cubic\meter}) and $\mu$ (\SI{1e-3}{\kilo\gram\per\meter\per\second}) for simplicity. Salinity does vary seasonally which will change these values, but had little affect on the model output.
+
+We capture the temporal variation of $C(t)$ through the mass balance given as
+\begin{equation}\label{C_eq}
+	\frac{d[h(t)-\zeta(t)]C(t)}{dt} = -w_sC(t)+C_{in}\frac{dh}{dt},
+\end{equation}
+where $h$ is the height of the water column and $C_{in}$ is the incoming suspended sediment concentration of the adjacent water column. We consider $\zeta$ to be a function of time and update it at every timestep which differs from previous studies \cite{krone_method_1987,allen_salt-marsh_1990,french_numerical_1993, temmerman_modelling_2003,temmerman_modelling_2004,french_tidal_2006} which only update $\zeta$ after every tidal cycle. The physical interpretation of equation \ref{C_eq} is that the first term is the mass flux above an area on the tidal platform, the second term is the mass flux extracted from the water column, and the third term is the mass flux from the adjacent water column. Further derivation of equation \ref{C_eq} results in
+
+\begin{equation}\label{C_eq2}
+	\frac{dC}{dt}[h(t) - \zeta(t)] = -w_sC(t) + [C_{in} - C(t)]\frac{dh}{dt} + C(t)\frac{d\zeta}{dt}
+\end{equation}
+
+From equation \ref{C_eq2}, we can approximate the solution for concentration numerically.
+
+% In previous model runs, we focused exclusively on $S_M$ as it dominates equation \ref{eq1}. $S_O$, $P$, and $M$ were all set to zero. We will evaluate the need to incorporate these terms and determine the appropriate functions to approximate each.
+
+\subsection*{Model inputs}
+
+We obtained model inputs from field measurements. We observed tidal height, grain size, suspended sediment concentration (SSC), and dry bulk density around Polder 32 over multiple field seasons from 2011 to 2016 \cite{auerbach_flood_2015,hale_observations_2019,hale_seasonal_2019}.
+
+For $h$, we extracted one year of contiguous tidal data from from a pressure sensor deployed within the tidal channel near Polder 32. We used the oce package in R (3.6.3) to create an idealized tidal curve from our data \cite{kelley_oce_2020}. The tidal curve was then shifted down so that mean higher high water would be \SI{~0.3}{\meter} above the Sundarban platform and \SI{~1.8}{\meter} above the polder surface ($\zeta$). We replicated this tidal curve for each subsequent year for the length of the model run. Field observations confirm these benchmark elevation \cite{auerbach_flood_2015,hale_observations_2019,hale_seasonal_2019,bomer_surface_2020}. In order to simulate sea level rise, the subsequent year tidal curves were increased at a linear rate of \SI{2}{\milli\meter\per\year} which is consistent with field observations.
+
+
+For $C_{in}$, we use observed values of SSC from Hale et al. \cite{hale_observations_2019} that are characteristic of the tidal channels in the region. Similar to Temmerman et al. \cite{temmerman_modelling_2003,temmerman_modelling_2004}, we scaled the observed tidal channel SSC by a factor as the flood waters are expected to have a lower SSC than the tidal channel due to lower flow velocities. For our preliminary study, we use a k-factor of 0.7. In future model iterations, we will better explore this relationship and determine an appropriate k-factor.
+
+For $\rho$, we used values derived from conversations with Steven Goodbred and Carol Wilson.
+
+\matmethods{Please describe your materials and methods here. This can be more than one paragraph, and may contain subsections and equations as required. 
+
+\subsection*{Subsection for Method}
+Example text for subsection.
+}
+
+\showmatmethods{} % Display the Materials and Methods section
+
+\acknow{Please include your acknowledgments here, set in a single paragraph. Please do not include any acknowledgments in the Supporting Information, or anywhere else in the manuscript.}
+
+\showacknow{} % Display the acknowledgments section
+
+% Bibliography
+\bibliographystyle{pnas-new}
+\bibliography{zotero-refs}
+
+\end{document}
