@@ -57,7 +57,7 @@ Note: please start your introduction without including the word ``Introduction''
 
 \subsection*{Numerical model}
 
-We modeled tidal platform elevation ($\zeta$) using a zero-dimensional mass balance model using the basic formulation provided by Krone \cite{krone_method_1987} and further refined by Allen \cite{allen_salt-marsh_1990}, French \cite{french_numerical_1993}, and Temmerman et al. \cite{temmerman_modelling_2003,temmerman_modelling_2004}. The rate of tidal platform elevation change is described as
+We modeled tidal platform elevation ($\zeta$) using a zero-dimensional mass balance model using the basic formulation provided by Krone \cite{kroneMethodSimulatingMarsh1987} and further refined by Allen \cite{allenSaltmarshGrowthStratification1990}, French \cite{frenchNumericalSimulationVertical1993}, and Temmerman et al. \cite{temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}. The rate of tidal platform elevation change is described as
 \begin{equation}\label{mass_bal_eq}
 	\frac{d \zeta}{d t} = \frac{d S_M}{d t} + \frac{d S_O}{d t} + \frac{d P}{d t} + \frac{d M}{d t},
 \end{equation}
@@ -67,20 +67,20 @@ We approximate $S_M$ as
 \begin{equation}\label{min_sed_eq}
 	S_M(t) = \int{\frac{w_{s}C(t)}{\rho_b}dt},
 \end{equation}
-where $w_s$ is the characteristic settling velocity of a given grain size, $C(t)$ is the depth-averaged and time-varying sediment concentration in the water column, and $\rho_b$ is the dry bulk density of the sediment. We assume there is no resuspension of mineral sediment which is consistent with Krone's \cite{krone_method_1987} initial formulation.
+where $w_s$ is the characteristic settling velocity of a given grain size, $C(t)$ is the depth-averaged and time-varying sediment concentration in the water column, and $\rho_b$ is the dry bulk density of the sediment. We assume there is no resuspension of mineral sediment which is consistent with Krone's \cite{kroneMethodSimulatingMarsh1987} initial formulation.
 
 $w_s$ is calculated for a given grain size by using Stokes' law to determine the terminal velocity of a sphere falling through a fluid given by
 \begin{equation}\label{ws_eq}
 	w_s =  \frac{2}{9}\frac{\rho_p - \rho_f}{\mu}gR^2
 \end{equation}
 
-where $\rho_p$ is the mass density of the particle or grain, $\rho_f$ is the mass density of the fluid, $\mu$ is the dynamic viscosity of the fluid, $g$ is the acceleration due to gravity, and $R$ is the radius of the grain. This is approximation for $w_s$ is consistent with previous similar studies \cite{allen_salt-marsh_1990,temmerman_modelling_2003,temmerman_modelling_2004}. We assume basic properties of water for $\rho_f$ (\SI{1000}{\kilo\gram\per\cubic\meter}) and $\mu$ (\SI{1e-3}{\kilo\gram\per\meter\per\second}) for simplicity. Salinity does vary seasonally which will change these values, but had little affect on the model output.
+where $\rho_p$ is the mass density of the particle or grain, $\rho_f$ is the mass density of the fluid, $\mu$ is the dynamic viscosity of the fluid, $g$ is the acceleration due to gravity, and $R$ is the radius of the grain. This is approximation for $w_s$ is consistent with previous similar studies \cite{allenSaltmarshGrowthStratification1990,temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}. We assume basic properties of water for $\rho_f$ (\SI{1000}{\kilo\gram\per\cubic\meter}) and $\mu$ (\SI{1e-3}{\kilo\gram\per\meter\per\second}) for simplicity. Salinity does vary seasonally which will change these values, but had little affect on the model output.
 
 We capture the temporal variation of $C(t)$ through the mass balance given as
 \begin{equation}\label{C_eq}
 	\frac{d[h(t)-\zeta(t)]C(t)}{dt} = -w_sC(t)+C_{in}\frac{dh}{dt},
 \end{equation}
-where $h$ is the height of the water column and $C_{in}$ is the incoming suspended sediment concentration of the adjacent water column. We consider $\zeta$ to be a function of time and update it at every timestep which differs from previous studies \cite{krone_method_1987,allen_salt-marsh_1990,french_numerical_1993, temmerman_modelling_2003,temmerman_modelling_2004,french_tidal_2006} which only update $\zeta$ after every tidal cycle. The physical interpretation of equation \ref{C_eq} is that the first term is the mass flux above an area on the tidal platform, the second term is the mass flux extracted from the water column, and the third term is the mass flux from the adjacent water column. Further derivation of equation \ref{C_eq} results in
+where $h$ is the height of the water column and $C_{in}$ is the incoming suspended sediment concentration of the adjacent water column. We consider $\zeta$ to be a function of time and update it at every timestep which differs from previous studies \cite{kroneMethodSimulatingMarsh1987,allenSaltmarshGrowthStratification1990,frenchNumericalSimulationVertical1993,temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004,frenchTidalMarshSedimentation2006} which only update $\zeta$ after every tidal cycle. The physical interpretation of equation \ref{C_eq} is that the first term is the mass flux above an area on the tidal platform, the second term is the mass flux extracted from the water column, and the third term is the mass flux from the adjacent water column. Further derivation of equation \ref{C_eq} results in
 
 \begin{equation}\label{C_eq2}
 	\frac{dC}{dt}[h(t) - \zeta(t)] = -w_sC(t) + [C_{in} - C(t)]\frac{dh}{dt} + C(t)\frac{d\zeta}{dt}
@@ -92,12 +92,12 @@ From equation \ref{C_eq2}, we can approximate the solution for concentration num
 
 \subsection*{Model inputs}
 
-We obtained model inputs from field measurements. We observed tidal height, grain size, suspended sediment concentration (SSC), and dry bulk density around Polder 32 over multiple field seasons from 2011 to 2016 \cite{auerbach_flood_2015,hale_observations_2019,hale_seasonal_2019}.
+We obtained model inputs from field measurements. We observed tidal height, grain size, suspended sediment concentration (SSC), and dry bulk density around Polder 32 over multiple field seasons from 2011 to 2016 \cite{auerbachFloodRiskNatural2015,haleObservationsScalingTidal2019,haleSeasonalVariabilityForces2019}.
 
-For $h$, we extracted one year of contiguous tidal data from from a pressure sensor deployed within the tidal channel near Polder 32. We used the oce package in R (3.6.3) to create an idealized tidal curve from our data \cite{kelley_oce_2020}. The tidal curve was then shifted down so that mean higher high water would be \SI{~0.3}{\meter} above the Sundarban platform and \SI{~1.8}{\meter} above the polder surface ($\zeta$). We replicated this tidal curve for each subsequent year for the length of the model run. Field observations confirm these benchmark elevation \cite{auerbach_flood_2015,hale_observations_2019,hale_seasonal_2019,bomer_surface_2020}. In order to simulate sea level rise, the subsequent year tidal curves were increased at a linear rate of \SI{2}{\milli\meter\per\year} which is consistent with field observations.
+For $h$, we extracted one year of contiguous tidal data from from a pressure sensor deployed within the tidal channel near Polder 32. We used the oce package in R (3.6.3) to create an idealized tidal curve from our data \cite{kelleyOceAnalysisOceanographic2020}. The tidal curve was then shifted down so that mean higher high water would be \SI{~0.3}{\meter} above the Sundarban platform and \SI{~1.8}{\meter} above the polder surface ($\zeta$). We replicated this tidal curve for each subsequent year for the length of the model run. Field observations confirm these benchmark elevation \cite{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. In order to simulate sea level rise, the subsequent year tidal curves were increased at a linear rate of \SI{2}{\milli\meter\per\year} which is consistent with field observations.
 
 
-For $C_{in}$, we use observed values of SSC from Hale et al. \cite{hale_observations_2019} that are characteristic of the tidal channels in the region. Similar to Temmerman et al. \cite{temmerman_modelling_2003,temmerman_modelling_2004}, we scaled the observed tidal channel SSC by a factor as the flood waters are expected to have a lower SSC than the tidal channel due to lower flow velocities. For our preliminary study, we use a k-factor of 0.7. In future model iterations, we will better explore this relationship and determine an appropriate k-factor.
+For $C_{in}$, we use observed values of SSC from Hale et al. \cite{haleObservationsScalingTidal2019} that are characteristic of the tidal channels in the region. Similar to Temmerman et al. \cite{temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}, we scaled the observed tidal channel SSC by a factor as the flood waters are expected to have a lower SSC than the tidal channel due to lower flow velocities. For our preliminary study, we use a k-factor of 0.7. In future model iterations, we will better explore this relationship and determine an appropriate k-factor.
 
 For $\rho$, we used values derived from conversations with Steven Goodbred and Carol Wilson.
 
@@ -114,7 +114,6 @@ Example text for subsection.
 \showacknow{} % Display the acknowledgments section
 
 % Bibliography
-\bibliographystyle{pnas-new}
 \bibliography{references}
 
 \end{document}
