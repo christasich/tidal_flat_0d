@@ -552,6 +552,11 @@ FUNCTION {format.tr.number}
   if$
 }
 
+FUNCTION {format.journal}
+{
+  "{\em\protect\JournalTitle{" journal * "}}" *
+}
+
 FUNCTION {format.article.crossref}
 { key empty$
     { journal empty$
@@ -635,10 +640,6 @@ FUNCTION {format.incoll.inproc.crossref}
   " \cite{" * crossref * "}" *
 }
 
-FUNCTION {format.journal}
-{
-  "{\em\protect\JournalTitle{" journal * "}}" *
-}
 
 FUNCTION {article}
 { output.bibitem
