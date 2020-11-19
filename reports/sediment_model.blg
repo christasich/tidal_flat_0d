@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: sediment_model.aux
+The style file: pnas-new.bst
+Database file #1: references.bib
+You've used 13 entries,
+            1812 wiz_defined-function locations,
+            569 strings with 7254 characters,
+and the built_in function-call counts, 3086 in all, are:
+= -- 299
+> -- 153
+< -- 1
++ -- 46
+- -- 33
+* -- 260
+:= -- 476
+add.period$ -- 25
+call.type$ -- 13
+change.case$ -- 13
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 132
+empty$ -- 269
+format.name$ -- 33
+if$ -- 681
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 12
+newline$ -- 54
+num.names$ -- 13
+pop$ -- 23
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 70
+stack$ -- 0
+substring$ -- 244
+swap$ -- 28
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 35
+width$ -- 15
+write$ -- 130
