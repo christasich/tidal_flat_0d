@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{centerforinternationalearthscienceinformationnetwork-ciesin-columbiauniversityPopulationEstimationService2018}
+{Center For International Earth Science Information Network-CIESIN-Columbia
+  University}, Population {{Estimation Service}}, {{Version}} 3 ({{PES}}-v3)
+  (2018).
+
 \bibitem{auerbachFloodRiskNatural2015}
 LW Auerbach, et~al., Flood risk of natural and embanked landscapes on the
   {{Ganges}}\textendash{{Brahmaputra}} tidal delta plain.
@@ -69,9 +74,6 @@ RP Hale, CA Wilson, EJ Bomer, Seasonal {{Variability}} of {{Forces Controlling
   Sedimentation}} in the {{Sundarbans National Forest}}, {{Bangladesh}}.
 \newblock {\em\protect\JournalTitle{Frontiers in Earth Science}} \textbf{7},
   211 (2019).
-
-\bibitem{kelleyOceAnalysisOceanographic2020}
-D Kelley, C Richards, Oce: {{Analysis}} of {{Oceanographic Data}} (2020).
 
 \bibitem{bomerSurfaceElevationSedimentation2020}
 EJ Bomer, CA Wilson, RP Hale, ANM Hossain, FMA Rahman, Surface elevation and
