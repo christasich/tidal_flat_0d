@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex sediment_model"] 1608161215 "sediment_model.aux" "sediment_model.bbl" "sediment_model" 1608161220
+["bibtex sediment_model"] 1608161215 "sediment_model.aux" "sediment_model.bbl" "sediment_model" 1608234464
   "./pnas-new.bst" 1604379090 18619 d4b65f2563f710850feaa1950f265f15 ""
   "references.bib" 1608161191 66391 778388c4e62e2733ad45d82e80f19c1a ""
-  "sediment_model.aux" 1608161220 6103 bbb8079b695ea03e3cada60e8e551e87 "pdflatex"
+  "sediment_model.aux" 1608234463 6103 bbb8079b695ea03e3cada60e8e551e87 "pdflatex"
   (generated)
-  "sediment_model.bbl"
   "sediment_model.blg"
-["pdflatex"] 1608161219 "/home/chris/projects/tidal_flat_0d/reports/sediment_model.tex" "/home/chris/projects/tidal_flat_0d/reports/sediment_model.pdf" "sediment_model" 1608161220
-  "/home/chris/projects/tidal_flat_0d/reports/sediment_model.aux" 1608161220 6103 bbb8079b695ea03e3cada60e8e551e87 ""
-  "/home/chris/projects/tidal_flat_0d/reports/sediment_model.tex" 1608161218 14365 5a7ac058fc4f76724119f644af2e6304 ""
+  "sediment_model.bbl"
+["pdflatex"] 1608234462 "/home/chris/projects/tidal_flat_0d/reports/sediment_model.tex" "/home/chris/projects/tidal_flat_0d/reports/sediment_model.pdf" "sediment_model" 1608234464
+  "/home/chris/projects/tidal_flat_0d/reports/sediment_model.aux" 1608234463 6103 bbb8079b695ea03e3cada60e8e551e87 ""
+  "/home/chris/projects/tidal_flat_0d/reports/sediment_model.tex" 1608234461 14365 5a7ac058fc4f76724119f644af2e6304 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -280,14 +280,14 @@
   "pnas-new.bst" 1604379090 18619 d4b65f2563f710850feaa1950f265f15 ""
   "pnas-new.cls" 1604371572 14809 fc413f79ebd5cdd49ef6be9150678723 ""
   "pnasresearcharticle.sty" 1604371572 1275 7aec1205c12893a1c87d36790c959b86 ""
-  "sediment_model.aux" 1608161220 6103 bbb8079b695ea03e3cada60e8e551e87 "pdflatex"
+  "sediment_model.aux" 1608234463 6103 bbb8079b695ea03e3cada60e8e551e87 "pdflatex"
   "sediment_model.bbl" 1608161215 3920 3881879e3e4354c1c4c530afbb20f79d "bibtex sediment_model"
-  "sediment_model.out" 1608161220 67 e2e616883c6c841678d5073d21283d3d "pdflatex"
-  "sediment_model.tex" 1608161218 14365 5a7ac058fc4f76724119f644af2e6304 ""
+  "sediment_model.out" 1608234463 67 e2e616883c6c841678d5073d21283d3d "pdflatex"
+  "sediment_model.tex" 1608234461 14365 5a7ac058fc4f76724119f644af2e6304 ""
   (generated)
-  "sediment_model.pdf"
-  "sediment_model.aux"
+  "/home/chris/projects/tidal_flat_0d/reports/sediment_model.log"
   "sediment_model.log"
   "/home/chris/projects/tidal_flat_0d/reports/sediment_model.pdf"
-  "/home/chris/projects/tidal_flat_0d/reports/sediment_model.log"
+  "sediment_model.pdf"
   "sediment_model.out"
+  "sediment_model.aux"
