@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: sediment_model.aux
+The style file: cas-model2-names.bst
+Database file #1: ../../PNAS/references.bib
+Warning--I didn't find a database entry for "kelleyOceAnalysisOceanographic2020"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 10 entries,
+            2990 wiz_defined-function locations,
+            821 strings with 9359 characters,
+and the built_in function-call counts, 7251 in all, are:
+= -- 556
+> -- 292
+< -- 5
++ -- 115
+- -- 102
+* -- 817
+:= -- 1052
+add.period$ -- 38
+call.type$ -- 10
+change.case$ -- 84
+chr.to.int$ -- 9
+cite$ -- 10
+duplicate$ -- 525
+empty$ -- 516
+format.name$ -- 124
+if$ -- 1338
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 106
+newline$ -- 73
+num.names$ -- 40
+pop$ -- 163
+preamble$ -- 1
+purify$ -- 74
+quote$ -- 0
+skip$ -- 154
+stack$ -- 0
+substring$ -- 325
+swap$ -- 407
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 90
+warning$ -- 0
+while$ -- 49
+width$ -- 0
+write$ -- 172
+(There was 1 warning)

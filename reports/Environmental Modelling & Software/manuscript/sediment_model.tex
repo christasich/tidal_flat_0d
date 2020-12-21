@@ -20,6 +20,12 @@
 %\documentclass[a4paper,fleqn,longmktitle]{cas-sc}
 \documentclass[a4paper,fleqn]{cas-sc}
 
+\usepackage{siunitx}
+
+% Document parameters
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\foot{ft}
+
 %\usepackage[numbers]{natbib}
 %\usepackage[authoryear]{natbib}
 \usepackage[authoryear,longnamesfirst]{natbib}
@@ -38,11 +44,11 @@
 \let\WriteBookmarks\relax
 \def\floatpagepagefraction{1}
 \def\textpagefraction{.001}
-\shorttitle{Leveraging social media news}
-\shortauthors{CV Radhakrishnan et~al.}
+\shorttitle{Sediment model}
+\shortauthors{C. Tasich et~al.}
 %\begin{frontmatter}
 
-\title [mode = title]{This is a specimen $a_b$ title}                      
+\title [mode = title]{This is a specimen $a_b$ title}
 \tnotemark[1,2]
 
 \tnotetext[1]{This document is the results of the research
@@ -54,14 +60,14 @@
 
 
 
-\author[1,3]{CV Radhakrishnan}[type=editor,
+\author[1,3]{C. Tasich}[type=editor,
                         auid=000,bioid=1,
-                        prefix=Sir,
+                        prefix=,
                         role=Researcher,
                         orcid=0000-0001-7511-2910]
 \cormark[1]
 \fnmark[1]
-\ead{cvr_1@tug.org.in}
+\ead{chris.tasich@vanderbilt.edu}
 \ead[url]{www.cvr.cc, cvr@sayahna.org}
 
 \credit{Conceptualization of this study, Methodology, Software}
@@ -128,9 +134,7 @@ Each keyword shall be separated by a \verb+\sep+ command.
 quadrupole exciton \sep polariton \sep \WGM \sep \BEC
 \end{keywords}
 
-
 \maketitle
-
 
 \section{Introduction}
 
@@ -195,11 +199,12 @@ For $\rho$, we used values derived from conversations with Steven Goodbred and C
 \printcredits
 
 %% Loading bibliography style file
-%\bibliographystyle{model1-num-names}
+% \bibliographystyle{model1-num-names}
 \bibliographystyle{cas-model2-names}
+% \bibliographystyle{elsarticle-harv}
 
 % Loading bibliography database
-\bibliography{references}
+\bibliography{../../PNAS/references}
 
 \end{document}
 
