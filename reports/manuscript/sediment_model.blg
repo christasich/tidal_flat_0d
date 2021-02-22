@@ -5,45 +5,45 @@ The style file: cas-model2-names.bst
 Database file #1: references.bib
 Warning--I didn't find a database entry for "kelleyOceAnalysisOceanographic2020"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 12 entries,
+You've used 9 entries,
             2990 wiz_defined-function locations,
-            836 strings with 10027 characters,
-and the built_in function-call counts, 8446 in all, are:
-= -- 646
-> -- 344
-< -- 6
-+ -- 135
-- -- 120
-* -- 949
-:= -- 1231
-add.period$ -- 45
-call.type$ -- 12
-change.case$ -- 100
-chr.to.int$ -- 11
-cite$ -- 12
-duplicate$ -- 617
-empty$ -- 597
-format.name$ -- 150
-if$ -- 1555
+            812 strings with 9066 characters,
+and the built_in function-call counts, 6682 in all, are:
+= -- 507
+> -- 282
+< -- 4
++ -- 111
+- -- 99
+* -- 763
+:= -- 969
+add.period$ -- 34
+call.type$ -- 9
+change.case$ -- 78
+chr.to.int$ -- 8
+cite$ -- 9
+duplicate$ -- 480
+empty$ -- 467
+format.name$ -- 120
+if$ -- 1229
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 123
-newline$ -- 84
-num.names$ -- 48
-pop$ -- 198
+missing$ -- 98
+newline$ -- 67
+num.names$ -- 36
+pop$ -- 151
 preamble$ -- 1
-purify$ -- 88
+purify$ -- 69
 quote$ -- 0
-skip$ -- 181
+skip$ -- 139
 stack$ -- 0
-substring$ -- 353
-swap$ -- 471
+substring$ -- 289
+swap$ -- 378
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 81
 warning$ -- 0
-while$ -- 56
+while$ -- 44
 width$ -- 0
-write$ -- 201
+write$ -- 156
 (There was 1 warning)

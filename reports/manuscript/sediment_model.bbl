@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{9}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -46,15 +46,6 @@
 \newblock \bibinfo{journal}{CATENA} \bibinfo{volume}{187},
   \bibinfo{pages}{104312}.
 \newblock \DOIprefix\doi{10/ggszhr}.
-%Type = Misc
-\bibitem[{{Center For International Earth Science Information
-  Network-CIESIN-Columbia
-  University}(2018)}]{centerforinternationalearthscienceinformationnetwork-ciesin-columbiauniversityPopulationEstimationService2018}
-\bibinfo{author}{{Center For International Earth Science Information
-  Network-CIESIN-Columbia University}}, \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{Population {{Estimation Service}}, {{Version}} 3
-  ({{PES}}-v3)}.
-\newblock \DOIprefix\doi{10.7927/H4DR2SK5}.
 %Type = Article
 \bibitem[{French(1993)}]{frenchNumericalSimulationVertical1993}
 \bibinfo{author}{French, J.R.}, \bibinfo{year}{1993}.
@@ -85,17 +76,6 @@
 \newblock \bibinfo{journal}{Frontiers in Earth Science} \bibinfo{volume}{7},
   \bibinfo{pages}{211}.
 \newblock \DOIprefix\doi{10/ggjhb2}.
-%Type = Article
-\bibitem[{Higgins et~al.(2018)Higgins, Overeem, Rogers and
-  Kalina}]{higginsRiverLinkingIndia2018}
-\bibinfo{author}{Higgins, S.A.}, \bibinfo{author}{Overeem, I.},
-  \bibinfo{author}{Rogers, K.G.}, \bibinfo{author}{Kalina, E.A.},
-  \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{River linking in {{India}}: {{Downstream}} impacts on
-  water discharge and suspended sediment transport to deltas}.
-\newblock \bibinfo{journal}{Elem Sci Anth} \bibinfo{volume}{6},
-  \bibinfo{pages}{20}.
-\newblock \DOIprefix\doi{10/gc5tf8}.
 %Type = Inproceedings
 \bibitem[{Krone(1987)}]{kroneMethodSimulatingMarsh1987}
 \bibinfo{author}{Krone, R.}, \bibinfo{year}{1987}.
@@ -103,15 +83,6 @@
   in: \bibinfo{booktitle}{Coastal {{Sediments}}}, \bibinfo{publisher}{{American
   Society of Civil Engineers}}, \bibinfo{address}{{New Orleans, Louisiana}}.
   pp. \bibinfo{pages}{316--323}.
-%Type = Article
-\bibitem[{Pethick and Orford(2013)}]{pethickRapidRiseEffective2013}
-\bibinfo{author}{Pethick, J.}, \bibinfo{author}{Orford, J.D.},
-  \bibinfo{year}{2013}.
-\newblock \bibinfo{title}{Rapid rise in effective sea-level in southwest
-  {{Bangladesh}}: {{Its}} causes and contemporary rates}.
-\newblock \bibinfo{journal}{Global and Planetary Change} \bibinfo{volume}{111},
-  \bibinfo{pages}{237--245}.
-\newblock \DOIprefix\doi{10/s8h}.
 %Type = Article
 \bibitem[{Temmerman et~al.(2003)Temmerman, Govers, Meire and
   Wartel}]{temmermanModellingLongtermTidal2003}

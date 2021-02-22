@@ -1,181 +1,35 @@
 %% Template Preamble
 
 \documentclass[a4paper,fleqn]{cas-dc}
-
 \usepackage{natbib}
 
 %%%Author macros
 \def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
 
-%%%
 
 % User-defined preamble
+\usepackage{lineno}
+\linenumbers
 \usepackage{siunitx}
-
-% Document parameters
 \DeclareSIUnit\year{yr}
 \DeclareSIUnit\foot{ft}
 
+
+%% Begin document
+\shorttitle{DRAFT: Sediment model}
+\shortauthors{C.M. Tasich et~al.}
 \begin{document}
 \let\WriteBookmarks\relax
 \def\floatpagepagefraction{1}
 \def\textpagefraction{.001}
-\shorttitle{Sediment model}
-\shortauthors{C.M. Tasich et~al.}
 
-\title [mode = title]{DRAFT: Sediment model}
-
-\author{Christopher M. Tasich}[%
-orcid=0000-0001-7511-2910,
-suffix=]
-\ead{chris.tasich@vanderbilt.edu}
-\cormark[1]
-
-\address{Department of Earth \& Environmental Sciences, Vanderbilt University, Nashville TN 37235, USA}
-
-\author{Jonathan M. Gilligan}
-\cormark[2]
-
-\author{Steven L. Goodbred}[%
-suffix=Jr
-]
-
-\begin{abstract}
-  The low-lying, coastal region of the Ganges-Brahmaputra (GB) delta has relied on poldering (the creation of embanked islands) to mitigate the effects of tidal inundation and storm surge since the 1960s. The result has been an increase in total habitable and arable land allowing for the sustenance of 20 million people within the tidal deltaplain. However, poldering produced the unintended consequence of starving the interior landscapes of sediment resulting in a significant elevation offset (~1-1.5 m) from that of the natural system. Engineering efforts, such as tidal river management (TRM), propose a controlled inundation effort to allow sediment exchange with the tidal network. Some local TRM efforts have succeeded, while other have not. However, there have been few quantitative analyses aimed at understanding the relationship between tidal inundation and sediment accumulation.  Furthermore, sea level rise (SLR) and decreases in suspended sediment concentrations (SSC) due to damming of rivers may also affect sediment accumulations in the future. We use a combination of field based observations and modeling to simulate the long-term evolution of both the poldered and the natural system in the GB delta.
-
-  Our model employs a mass balance with sediment accumulation controlled by tidal height above the platform, SSC, settling velocity, and dry bulk density. Tidal height is determine using pressure sensor data with projected SLR superimposed. SSC varies within both one tidal cycle (0-3 g/L) and seasonally (0.15-0.77 g/L). Grain size (14-27 µm) is used as a proxy for determining settling velocity. Dry bulk density (900-1500 kg/m3) is determined from sediment samples at depths of 50-100 cm. We use a Monte Carlo simulation to project sediment accumulation probabilities over the next century. Furthermore, we simulate perturbations to the system such as decreases in SSC due to recent damming of the Ganges in India. Baseline results suggest the P32 system could recover to that of the natural system in only 7 years. However, aggressive SLR projections or decreases in SSC result in mean high water out-pacing sediment accumulation for both P32 and the natural mangrove forest.
-\end{abstract}
-
-% \begin{highlights}
-% \item SSC is sufficient to maintain pace with SLR.
-% \end{highlights}
-
-\begin{keywords}
-TRM \sep polders \sep sea level rise
-\end{keywords}
-
-\maketitle
-
-\section{Introduction}
-
-Sea level rise threatens the densely populated and ecologically significant low-lying, coastal region of Bengal. Mitigating the effects of sea level rise (SLR) in this region will be especially difficult considering current widespread land management practices and the ongoing geopolitical tension between India and Bangladesh.
-
-Coastal Bengal is situated within the delta formed by the confluence of the Ganges and Brahmaputra rivers and straddles the border between West Bengal, India to the east and Bangladesh to the west. The region is home to \textasciitilde30 million people \citep{centerforinternationalearthscienceinformationnetwork-ciesin-columbiauniversityPopulationEstimationService2018} and the ecologically critical Sundarbans mangrove forest. Since the 1960s, the region has seen a vast transformation through the reduction in natural mangrove habitat and the widspread construction of earthen embankments. These embankments surround large swaths of clearcut land, known as polders, that accomodate the swelling population of the region.
-
-While, preventing regular inundation by spring high tides, the creation of these embankments have had the unintended consequence of starving the interior of the polders of fresh sediment. Without this sediment, polder interiors have compacted resulting in signficant elevation offset (\SIrange{1.0}{1.5}{\meter}) relative to the natural mangrove forest \citep{auerbachFloodRiskNatural2015}. Polder elevations often sit precariously below local mean high water (MHW) levels leading to persistent waterlogging. Furthermore, many of these embankments are in disrepair and susceptible to breaching especially by storm surge as was the case with Cyclone Sidr (2007), Cyclone Aila (2009), and recently with Cyclone Amphan (2020).
-
-Tidal river management (TRM) has been proposed as a possible augmentation of current land management practices to alleviate some of the issues caused by poldering. Under TRM, embankments are seasonally breached to allow tidal water inundation and sediment aggradation. Many low-lying areas may recover to an acceptable elevation within 5 to 10 years, though, some may take longer. There are a host of local socioeconomic, political, and governance consideration that may influence the success of TRM. Here, we neglect those considerations and focus on the general feasibility of TRM in regards to SLR and the sediment supply of the GB system. Future studies will focus on the social dynamics surround TRM.
-
-Coastal Bengal is often seen as one of the most at-risk regions for SLR due to climate change. Infographics often depict large swaths of the Bengal coastline flooded under different SLR scenarios. However, this overly simplifies the threats to the region and neglects the significant sediment contribution of the GB system in mainintaining the natural elevation.
-
-Estimates for increases in Relative Mean Sea Level (RMSL) in the GB delta range from \SIrange{2.8}{8.8}{\milli\meter\per\year}. However, RMSL neglects the widening of the tidal range in the polder region. On average, local high water levels in the polder region are increasing at a rate of \SI{15.9}{\milli\meter\per\year} \citep{pethickRapidRiseEffective2013}. While SLR is of paramount importance, tidal range amplification is the more imminent threat to the region. This is especially important considering the Bangladeshi government's recent reinvestment in poldering with a \$400 million loan from the World Bank for the Coastal Embankment Improvement Project - Phase I (CEIP-I).
-
-As for the natural mangrove system, it is unclear how changing water levels will affect elevation. Some studies have shown that the region is incredibly resilient to increasing water levels due, in large part, to the abudant sediment supply of the GB system. This sediment is delivered to the platform periodically during spring high tide which helps maintain an equilibirum elevation approximately equivalent to mean higher high water (MHHW). But, this large volume of sediment delivered to coastal Bengal is not guaranteed.
-
-Water has long been the focus of the geopolitical disputes between India and Bangladesh. However, the reduction in waterflow across the border portends a significant decrease in sediment flux. Estimates suggest sediment flux may be reduced by \SIrange{39}{75}{\percent} for the Ganges and \SIrange{9}{25}{\percent} for the Brahmaputra resulting in a change in aggradation from \SI{3.6}{\milli\meter\per\year} to \SI{2.5}{\milli\meter\per\year} \citep{higginsRiverLinkingIndia2018}.
-
-The combination of increasing water levels and decreasing sediment supply may further intensify an already dire situation. Here, we use a zero-dimensional mass balance model of sediment aggradation to understand the impact that increasing water levels and decreasing sediment flux will have on the regions equilibrium elevation and consequently its resilience to climate change. We consider both the resilience of the natural mangrove system and the ability of the polder system to recover to a more resilient elevation through TRM.
-
-\section{Methods}
-
-\subsection{Model design}
-
-We modeled tidal platform elevation ($\eta$) using a zero-dimensional mass balance approach initially described by \citet{kroneMethodSimulatingMarsh1987} and validated by many subsequent studies \citep{allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}. The rate of tidal platform elevation change is described as
-\begin{equation}\label{eq1}
-	\frac{d\eta}{dt} = \frac{dS_m}{dt} + \frac{dS_o}{dt} + \frac{dP}{dt} + \frac{dM}{dt},
-\end{equation}
-where $\frac{dS_m}{dt}$ is the rate of mineral sedimentation, $\frac{dS_o}{dt}$ is the rate of organic matter sedimentation, $\frac{dP}{dt}$ is the rate of compaction of the deposited sediment, and $\frac{dM}{dt}$ is the rate of regional tectonic subsidence. Each term is considered below.
-
-In order to model $\frac{dS_m}{dt}$, we began by defining the depth of the water column as
-
-\begin{equation}\label{eq2}
-	h(t) = \zeta(t) - \eta(t),
-\end{equation}
-
-where $\zeta(t)$ is the height of the water column. This also implies that
-
-\begin{equation}\label{eq3}
-	\frac{dh(t)}{dt} = \frac{d\zeta(t)}{dt} - \frac{d\eta(t)}{dt}.
-\end{equation}
-
-Independetly, we assumed that
-
-\begin{equation}\label{eq4}
-	\frac{dS_m(t)}{dt} = \frac{w_s C(t)}{\rho_b},
-\end{equation}
-where $w_s$ is the settling velocity of a characteristic grain size given by Stoke's law, $C(t)$ is the depth-averaged and time-varying suspended sediment concentration (SSC) in the water column, and $\rho_b$ is the bulk density of the deposited sediment. We assumed no resuspension of mineral sediment which is practical and consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. Additionally, Stoke's law likely overestimates the settling rates which would increase sedimentation rates. However, the model only considers one grain size which would have a disproportionate effect on the settling of larger grains effectively decreasing sedimentation rates. Furthermore, model calibration corrected for general error. Thus, our modeled $w_s$ should be considered a high, but not unreasonable approximation.
-
-We then assumed the rate of change of suspended sediment in the water column to be
-
-\begin{equation}\label{eq5}
-	\frac{d}{dt}[h(t)C(t)] = -w_s C(t) + C_b \frac{dh(t)}{dt},
-\end{equation}
-
-which can be expanded and rerranged as
-
-\begin{equation}\label{eq6}
-	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{1}{h(t)} [C(t) - C_b] \frac{dh(t)}{dt}.
-\end{equation}
-
-When $\displaystyle\left\lvert \frac{d\eta(t)}{dt} \right\rvert \ll \displaystyle\left\lvert \frac{d\zeta(t)}{dt} \right\rvert$, Eq. \ref{eq6} can be specified in terms of water height or sea level given as
-
-\begin{equation}\label{eq7}
-	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{1}{h(t)} [C(t) - C_b] \frac{d\zeta(t)}{dt}.
-\end{equation}
-
-Furthermore, we only allowed deposition to occur on the rising limb of a tide. We defined 
-
-\begin{equation}\label{eq8}
-  S = \frac{d\zeta}{dt}.
-\end{equation}
-
-Eq. \ref{eq8} then becomes
-
-\begin{equation}\label{eq9}
-	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{H(S)}{h(t)} [C(t) - C_b] \frac{d\zeta(t)}{dt}.
-\end{equation}
-
-where $H(S)$ denotes a Heaviside function defined assumed
-
-\begin{equation}\label{eq8}
-	H(S) = 
-  \begin{cases}
-    0 & \text{if $S < 0$}\\
-    1 & \text{if $S \geq 0$}
-  \end{cases}
-\end{equation}
-
-\subsection{Model inputs}
-
-We obtained model inputs from field measurements. We observed tidal height, grain size, suspended sediment concentration (SSC), and dry bulk density around Polder 32 over multiple field seasons from 2011 to 2016 \citet{auerbachFloodRiskNatural2015,haleObservationsScalingTidal2019,haleSeasonalVariabilityForces2019}.
-
-For $h$, we extracted one year of contiguous tidal data from from a pressure sensor deployed within the tidal channel near Polder 32. We used the oce package in R (3.6.3) to create an idealized tidal curve from our data \citet{kelleyOceAnalysisOceanographic2020}. The tidal curve was then shifted down so that mean higher high water would be \SI{~0.3}{\meter} above the Sundarban platform and \SI{~1.8}{\meter} above the polder surface ($\zeta$). We replicated this tidal curve for each subsequent year for the length of the model run. Field observations confirm these benchmark elevation \citet{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. In order to simulate sea level rise, the subsequent year tidal curves were increased at a linear rate of \SI{2}{\milli\meter\per\year} which is consistent with field observations.
-
-
-For $C_{in}$, we use observed values of SSC from Hale et al. \citet{haleObservationsScalingTidal2019} that are characteristic of the tidal channels in the region. Similar to Temmerman et al. \citet{temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}, we scaled the observed tidal channel SSC by a factor as the flood waters are expected to have a lower SSC than the tidal channel due to lower flow velocities. For our preliminary study, we use a k-factor of 0.7. In future model iterations, we will better explore this relationship and determine an appropriate k-factor.
-
-For $\rho$, we used values derived from conversations with Steven Goodbred and Carol Wilson.
-
-\section{Results}
-
-\section{Discussion}
-
-\section{Conclusions}
-
-\section{Bibliography}
-
-
-\appendix
-
-
-\printcredits
-
-%% Loading bibliography style file
-% \bibliographystyle{model1-num-names}
-\bibliographystyle{cas-model2-names}
-% \bibliographystyle{elsarticle-harv}
-
-% Loading bibliography database
-\bibliography{references}
+%% Insert pages
+% \input{sections/0-frontmatter}
+% \input{sections/1-introduction}
+\input{sections/2-methods}
+\input{sections/3-results}
+\input{sections/4-discussion}
+\input{sections/5-conclusions}
+\input{sections/6-backmatter}
 
 \end{document}
