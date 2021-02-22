@@ -1,137 +1,57 @@
-%% 
-%% Copyright 2019-2020 Elsevier Ltd
-%% 
-%% This file is part of the 'CAS Bundle'.
-%% --------------------------------------
-%% 
-%% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.2 of this license or (at your option) any
-%% later version.  The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%% 
-%% The list of all files belonging to the 'CAS Bundle' is
-%% given in the file `manifest.txt'.
-%% 
-%% Template article for cas-sc documentclass for 
-%% single column output.
+%% Template Preamble
 
-%\documentclass[a4paper,fleqn,longmktitle]{cas-sc}
-\documentclass[a4paper,fleqn]{cas-sc}
+\documentclass[a4paper,fleqn]{cas-dc}
 
+\usepackage[authoryear,longnamesfirst]{natbib}
+
+%%%Author macros
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+
+%%%
+
+% User-defined preamble
 \usepackage{siunitx}
 
 % Document parameters
 \DeclareSIUnit\year{yr}
 \DeclareSIUnit\foot{ft}
 
-%\usepackage[numbers]{natbib}
-%\usepackage[authoryear]{natbib}
-\usepackage[authoryear,longnamesfirst]{natbib}
-
-%%%Author macros
-\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
-\tsc{WGM}
-\tsc{QE}
-\tsc{EP}
-\tsc{PMS}
-\tsc{BEC}
-\tsc{DE}
-%%%
-
 \begin{document}
 \let\WriteBookmarks\relax
 \def\floatpagepagefraction{1}
 \def\textpagefraction{.001}
 \shorttitle{Sediment model}
-\shortauthors{C. Tasich et~al.}
-%\begin{frontmatter}
+\shortauthors{C.M. Tasich et~al.}
 
-\title [mode = title]{This is a specimen $a_b$ title}
-\tnotemark[1,2]
+\title [mode = title]{DRAFT: Sediment model}
 
-\tnotetext[1]{This document is the results of the research
-   project funded by the National Science Foundation.}
-
-\tnotetext[2]{The second title footnote which is a longer text matter
-   to fill through the whole text width and overflow into
-   another line in the footnotes area of the first page.}
-
-
-
-\author[1,3]{C. M. Tasich}[type=editor,
-                        auid=000,bioid=1,
-                        prefix=1,
-                        role=Researcher,
-                        orcid=0000-0001-7511-2910]
-\cormark[1]
-\fnmark[1]
+\author{Christopher M. Tasich}[%
+orcid=0000-0001-7511-2910,
+suffix=]
 \ead{chris.tasich@vanderbilt.edu}
-\ead[url]{www.cvr.cc, cvr@sayahna.org}
+\cormark[1]
 
-\credit{Conceptualization of this study, Methodology, Software}
+\address{Department of Earth \& Environmental Sciences, Vanderbilt University, Nashville TN 37235, USA}
 
-\address[1]{Department of Earth & Environmental Sciences, Vanderbilt University, Nashville TN 37235, USA}
-
-\author[2,4]{Han Theh Thanh}[style=chinese]
-
-\author[2,3]{CV Rajagopal}[%
-   role=Co-ordinator,
-   suffix=Jr,
-   ]
-\fnmark[2]
-\ead{cvr3@sayahna.org}
-\ead[URL]{www.sayahna.org}
-
-\credit{Data curation, Writing - Original draft preparation}
-
-\address[2]{Sayahna Foundation, Jagathy, Trivandrum 695014, India}
-
-\author%
-[1,3]
-{Rishi T.}
+\author{Jonathan M. Gilligan}
 \cormark[2]
-\fnmark[1,3]
-\ead{rishi@stmdocs.in}
-\ead[URL]{www.stmdocs.in}
 
-\address[3]{STM Document Engineering Pvt Ltd., Mepukada,
-    Malayinkil, Trivandrum 695571, India}
-
-\cortext[cor1]{Corresponding author}
-\cortext[cor2]{Principal corresponding author}
-\fntext[fn1]{This is the first author footnote. but is common to third
-  author as well.}
-\fntext[fn2]{Another author footnote, this is a very long footnote and
-  it should be a really long footnote. But this footnote is not yet
-  sufficiently long enough to make two lines of footnote text.}
-
-\nonumnote{This note has no numbers. In this work we demonstrate $a_b$
-  the formation Y\_1 of a new type of polariton on the interface
-  between a cuprous oxide slab and a polystyrene micro-sphere placed
-  on the slab.
-  }
+\author{Steven L. Goodbred}[%
+suffix=Jr
+]
 
 \begin{abstract}
-This template helps you to create a properly formatted \LaTeX\ manuscript.
+  The low-lying, coastal region of the Ganges-Brahmaputra (GB) delta has relied on poldering (the creation of embanked islands) to mitigate the effects of tidal inundation and storm surge since the 1960s. The result has been an increase in total habitable and arable land allowing for the sustenance of 20 million people within the tidal deltaplain. However, poldering produced the unintended consequence of starving the interior landscapes of sediment resulting in a significant elevation offset (~1-1.5 m) from that of the natural system. Engineering efforts, such as tidal river management (TRM), propose a controlled inundation effort to allow sediment exchange with the tidal network. Some local TRM efforts have succeeded, while other have not. However, there have been few quantitative analyses aimed at understanding the relationship between tidal inundation and sediment accumulation.  Furthermore, sea level rise (SLR) and decreases in suspended sediment concentrations (SSC) due to damming of rivers may also affect sediment accumulations in the future. We use a combination of field based observations and modeling to simulate the long-term evolution of both the poldered and the natural system in the GB delta.
 
-\noindent\texttt{\textbackslash begin{abstract}} \dots 
-\texttt{\textbackslash end{abstract}} and
-\verb+\begin{keyword}+ \verb+...+ \verb+\end{keyword}+ 
-which
-contain the abstract and keywords respectively. 
-Each keyword shall be separated by a \verb+\sep+ command.
+  Our model employs a mass balance with sediment accumulation controlled by tidal height above the platform, SSC, settling velocity, and dry bulk density. Tidal height is determine using pressure sensor data with projected SLR superimposed. SSC varies within both one tidal cycle (0-3 g/L) and seasonally (0.15-0.77 g/L). Grain size (14-27 µm) is used as a proxy for determining settling velocity. Dry bulk density (900-1500 kg/m3) is determined from sediment samples at depths of 50-100 cm. We use a Monte Carlo simulation to project sediment accumulation probabilities over the next century. Furthermore, we simulate perturbations to the system such as decreases in SSC due to recent damming of the Ganges in India. Baseline results suggest the P32 system could recover to that of the natural system in only 7 years. However, aggressive SLR projections or decreases in SSC result in mean high water out-pacing sediment accumulation for both P32 and the natural mangrove forest.
 \end{abstract}
 
-\begin{highlights}
-\item Research highlights item 1
-\item Research highlights item 2
-\item Research highlights item 3
-\end{highlights}
+% \begin{highlights}
+% \item SSC is sufficient to maintain pace with SLR.
+% \end{highlights}
 
 \begin{keywords}
-quadrupole exciton \sep polariton \sep \WGM \sep \BEC
+TRM \sep polders \sep sea level rise
 \end{keywords}
 
 \maketitle
