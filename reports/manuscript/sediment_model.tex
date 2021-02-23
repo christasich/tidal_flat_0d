@@ -13,6 +13,17 @@
 \usepackage{siunitx}
 \DeclareSIUnit\year{yr}
 \DeclareSIUnit\foot{ft}
+\sloppy
+
+\usepackage[
+    protrusion=true,
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
 
 
 %% Begin document
@@ -24,8 +35,8 @@
 \def\textpagefraction{.001}
 
 %% Insert pages
-% \input{sections/0-frontmatter}
-% \input{sections/1-introduction}
+\input{sections/0-frontmatter}
+\input{sections/1-introduction}
 \input{sections/2-methods}
 \input{sections/3-results}
 \input{sections/4-discussion}

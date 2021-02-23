@@ -2,78 +2,70 @@
 
 \subsection{Model design}
 
-We modeled tidal platform elevation ($\eta$) using a zero-dimensional mass balance approach initially described by \citet{kroneMethodSimulatingMarsh1987} and validated by many subsequent studies \citep{allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}. The rate of tidal platform elevation change is described as
+We modeled the vertical accretion of a tidal platform ($d\eta/dt$) using a zero-dimensional mass balance approach initially described by \citet{kroneMethodSimulatingMarsh1987} and validated by many subsequent studies \citep{allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}. The rate of vertical accretion is described as
 \begin{equation}\label{eq1}
-	\frac{d\eta}{dt} = \frac{dS_m}{dt} + \frac{dS_o}{dt} + \frac{dP}{dt} + \frac{dM}{dt},
+	d\eta/dt = dS_m/dt + dS_o/dt + dP/dt + dM/dt,
 \end{equation}
-where $\frac{dS_m}{dt}$ is the rate of mineral sedimentation, $\frac{dS_o}{dt}$ is the rate of organic matter sedimentation, $\frac{dP}{dt}$ is the rate of compaction of the deposited sediment, and $\frac{dM}{dt}$ is the rate of regional tectonic subsidence. Each term is considered below.
+where $dS_m/dt$ is the rate of mineral sedimentation, $dS_o/dt$ is the rate of organic matter sedimentation, $dP/dt$ is the rate of compaction of the deposited sediment, and $dM/dt$ is the rate of regional tectonic subsidence.
 
-In order to model $\frac{dS_m}{dt}$, we began by defining the depth of the water column as
-
+In order to model $dS_m/dt$, we began by defining the depth of the water column as
 \begin{equation}\label{eq2}
 	h(t) = \zeta(t) - \eta(t),
 \end{equation}
-
 where $\zeta(t)$ is the height of the water column. This also implies that
-
 \begin{equation}\label{eq3}
-	\frac{dh(t)}{dt} = \frac{d\zeta(t)}{dt} - \frac{d\eta(t)}{dt}.
+	dh(t)/dt = d\zeta(t)/dt - d\eta(t)/dt.
 \end{equation}
-
-Independetly, we assumed that
-
+Independetly, we assume the rate of sediment aggradation to be
 \begin{equation}\label{eq4}
-	\frac{dS_m(t)}{dt} = \frac{w_s C(t)}{\rho_b},
+	dS_m(t)/t = w_s C(t)/\rho_b,
 \end{equation}
-where $w_s$ is the settling velocity of a characteristic grain size given by Stoke's law, $C(t)$ is the depth-averaged and time-varying suspended sediment concentration (SSC) in the water column, and $\rho_b$ is the bulk density of the deposited sediment. We assumed no resuspension of mineral sediment which is practical and consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. Additionally, Stoke's law likely overestimates the settling rates which would increase sedimentation rates. However, the model only considers one grain size which would have a disproportionate effect on the settling of larger grains effectively decreasing sedimentation rates. Furthermore, model calibration corrected for general error. Thus, our modeled $w_s$ should be considered a high, but not unreasonable approximation.
+where $w_s$ is the nominal settling velocity of grain of sediment, $C(t)$ is the depth-averaged and time-varying suspended sediment concentration (SSC) in the water column, and $\rho_b$ is the bulk density of the deposited sediment.
 
-We then assumed the rate of change of suspended sediment in the water column to be
-
+We then defined the rate of of change of suspended sediment in the water column with the mass balance given as
 \begin{equation}\label{eq5}
-	\frac{d}{dt}[h(t)C(t)] = -w_s C(t) + C_b \frac{dh(t)}{dt},
+	d/dt[h(t)C(t)] = -w_s C(t) + C_b dh(t)/dt,
 \end{equation}
-
 which can be expanded and rerranged as
-
 \begin{equation}\label{eq6}
-	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{1}{h(t)} [C(t) - C_b] \frac{dh(t)}{dt}.
+	dC(t)/dt = - w_s C(t)/h(t) - 1/h(t)[C(t) - C_b] dh(t)/dt.
 \end{equation}
-
-When $\displaystyle\left\lvert \frac{d\eta(t)}{dt} \right\rvert \ll \displaystyle\left\lvert \frac{d\zeta(t)}{dt} \right\rvert$, Eq. \ref{eq6} can be specified in terms of water height or sea level given as
-
+When $\displaystyle\left\lvert d\eta(t)/dt \right\rvert \ll \displaystyle\left\lvert d\zeta(t)/dt \right\rvert$, \autoref{eq6} can be specified in terms of water height or sea level given as
 \begin{equation}\label{eq7}
-	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{1}{h(t)} [C(t) - C_b] \frac{d\zeta(t)}{dt}.
+	dC(t)/dt = - w_s C(t)/h(t) - 1/h(t) [C(t) - C_b] d\zeta(t)/dt.
 \end{equation}
-
-Furthermore, we only allowed deposition to occur on the rising limb of a tide. We defined 
-
+Furthermore, we only allowed deposition to occur on the rising limb of a tide which is consistent with previus studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. We introduced a mathematical switch to turn off the addition of sediment on the falling limb of the tide. Thus, \autoref{eq7}, becomes
 \begin{equation}\label{eq8}
-  S = \frac{d\zeta}{dt}.
+	dC(t)/dt = - w_s C(t)/h(t) - H(d\zeta/dt)/h(t) [C(t) - C_b] d\zeta(t)/dt.
 \end{equation}
-
-Eq. \ref{eq8} then becomes
-
+where $H(d\zeta/dt)$ denotes a Heaviside function defined as
 \begin{equation}\label{eq9}
-	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{H(S)}{h(t)} [C(t) - C_b] \frac{d\zeta(t)}{dt}.
-\end{equation}
-
-where $H(S)$ denotes a Heaviside function defined assumed
-
-\begin{equation}\label{eq8}
-	H(S) = 
+	H(d\zeta/dt) = 
   \begin{cases}
-    0 & \text{if $S < 0$}\\
-    1 & \text{if $S \geq 0$}
+    0 & \text{if $d\zeta/dt < 0$}\\
+    1 & \text{if $d\zeta/dt \geq 0$}
   \end{cases}
 \end{equation}
 
+Returning to \autoref{eq1}, we defined organic matter sedimentation as proportion of mineral sedimentation given as
+\begin{equation}\label{eq10}
+	dS_o/dt = 0.03dS_m/dt.
+\end{equation}
+
+which is consistent with the \SI{\sim3}{\percent} observed in the literature.
+
+For the purpose of this study, compaction and tectonic subsidence are neglected.
+
+\subsection{Assumptions}
+We assumed no resuspension of mineral sediment which is practical and consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. Additionally, Stoke's law likely overestimates the settling rates which would increase sedimentation rates. However, the model only considers one grain size which would have a disproportionate effect on the settling of larger grains effectively decreasing sedimentation rates. Furthermore, model calibration corrected for general error. Thus, our modeled $w_s$ should be considered a high, but not unreasonable approximation.
+
 \subsection{Model inputs}
 
-We obtained model inputs from field measurements. We observed tidal height, grain size, suspended sediment concentration (SSC), and dry bulk density around Polder 32 over multiple field seasons from 2011 to 2016 \citet{auerbachFloodRiskNatural2015,haleObservationsScalingTidal2019,haleSeasonalVariabilityForces2019}.
+% We obtained model inputs from field measurements. We observed tidal height, grain size, suspended sediment concentration (SSC), and dry bulk density around Polder 32 over multiple field seasons from 2011 to 2016 \citet{auerbachFloodRiskNatural2015,haleObservationsScalingTidal2019,haleSeasonalVariabilityForces2019}.
 
-For $h$, we extracted one year of contiguous tidal data from from a pressure sensor deployed within the tidal channel near Polder 32. We used the oce package in R (3.6.3) to create an idealized tidal curve from our data \citet{kelleyOceAnalysisOceanographic2020}. The tidal curve was then shifted down so that mean higher high water would be \SI{~0.3}{\meter} above the Sundarban platform and \SI{~1.8}{\meter} above the polder surface ($\zeta$). We replicated this tidal curve for each subsequent year for the length of the model run. Field observations confirm these benchmark elevation \citet{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. In order to simulate sea level rise, the subsequent year tidal curves were increased at a linear rate of \SI{2}{\milli\meter\per\year} which is consistent with field observations.
+% For $h$, we extracted one year of contiguous tidal data from from a pressure sensor deployed within the tidal channel near Polder 32. We used the oce package in R (3.6.3) to create an idealized tidal curve from our data \citet{kelleyOceAnalysisOceanographic2020}. The tidal curve was then shifted down so that mean higher high water would be \SI{~0.3/\meter} above the Sundarban platform and \SI{~1.8/\meter} above the polder surface ($\zeta$). We replicated this tidal curve for each subsequent year for the length of the model run. Field observations confirm these benchmark elevation \citet{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. In order to simulate sea level rise, the subsequent year tidal curves were increased at a linear rate of \SI{2/\milli\meter\per\year} which is consistent with field observations.
 
 
-For $C_{in}$, we use observed values of SSC from Hale et al. \citet{haleObservationsScalingTidal2019} that are characteristic of the tidal channels in the region. Similar to Temmerman et al. \citet{temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}, we scaled the observed tidal channel SSC by a factor as the flood waters are expected to have a lower SSC than the tidal channel due to lower flow velocities. For our preliminary study, we use a k-factor of 0.7. In future model iterations, we will better explore this relationship and determine an appropriate k-factor.
+% For $C_{in}$, we use observed values of SSC from Hale et al. \citet{haleObservationsScalingTidal2019} that are characteristic of the tidal channels in the region. Similar to Temmerman et al. \citet{temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}, we scaled the observed tidal channel SSC by a factor as the flood waters are expected to have a lower SSC than the tidal channel due to lower flow velocities. For our preliminary study, we use a k-factor of 0.7. In future model iterations, we will better explore this relationship and determine an appropriate k-factor.
 
-For $\rho$, we used values derived from conversations with Steven Goodbred and Carol Wilson.
+% For $\rho$, we used values derived from conversations with Steven Goodbred and Carol Wilson.
