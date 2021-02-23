@@ -8,12 +8,33 @@
 
 
 % User-defined preamble
-\usepackage{lineno}
+\usepackage[switch]{lineno}
 \linenumbers
+%% Patch 'normal' math environments:
+\newcommand*\linenomathpatch[1]{%
+  \cspreto{#1}{\linenomath}%
+  \cspreto{#1*}{\linenomath}%
+  \cspreto{end#1}{\endlinenomath}%
+  \cspreto{end#1*}{\endlinenomath}%
+}
+
+\linenomathpatch{equation}
+\linenomathpatch{gather}
+\linenomathpatch{multline}
+\linenomathpatch{align}
+\linenomathpatch{alignat}
+\linenomathpatch{flalign}
+
+\usepackage{xfrac}
+\DeclareCollectionInstance{plainmath}{xfrac}{mathdefault}{math}
+{
+scale-factor = 0.9
+}
+\UseCollection{xfrac}{plainmath}
 \usepackage{siunitx}
 \DeclareSIUnit\year{yr}
 \DeclareSIUnit\foot{ft}
-\sloppy
+\renewcommand{\equationautorefname}{Eq.}
 
 \usepackage[
     protrusion=true,
@@ -22,7 +43,11 @@
     tracking=true,
     kerning=true,
     spacing=true,
-    factor=1100]{microtype}
+    factor=1100,
+    stretch=10,
+    shrink=10,
+    ]{microtype}
+\microtypecontext{spacing=nonfrench}
 \SetTracking{encoding={*}, shape=sc}{40}
 
 

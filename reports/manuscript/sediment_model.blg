@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: sediment_model.aux
+The style file: cas-model2-names.bst
+Database file #1: references.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 13 entries,
+            2990 wiz_defined-function locations,
+            838 strings with 10101 characters,
+and the built_in function-call counts, 8923 in all, are:
+= -- 683
+> -- 362
+< -- 7
++ -- 142
+- -- 126
+* -- 994
+:= -- 1304
+add.period$ -- 47
+call.type$ -- 13
+change.case$ -- 107
+chr.to.int$ -- 12
+cite$ -- 13
+duplicate$ -- 656
+empty$ -- 631
+format.name$ -- 161
+if$ -- 1642
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 129
+newline$ -- 88
+num.names$ -- 52
+pop$ -- 218
+preamble$ -- 1
+purify$ -- 94
+quote$ -- 0
+skip$ -- 193
+stack$ -- 0
+substring$ -- 364
+swap$ -- 492
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 117
+warning$ -- 0
+while$ -- 59
+width$ -- 0
+write$ -- 212
