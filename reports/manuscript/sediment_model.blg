@@ -4,44 +4,44 @@ The top-level auxiliary file: sediment_model.aux
 The style file: cas-model2-names.bst
 Database file #1: references.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 13 entries,
+You've used 7 entries,
             2990 wiz_defined-function locations,
-            838 strings with 10101 characters,
-and the built_in function-call counts, 8923 in all, are:
-= -- 683
-> -- 362
-< -- 7
-+ -- 142
-- -- 126
-* -- 994
-:= -- 1304
-add.period$ -- 47
-call.type$ -- 13
-change.case$ -- 107
-chr.to.int$ -- 12
-cite$ -- 13
-duplicate$ -- 656
-empty$ -- 631
-format.name$ -- 161
-if$ -- 1642
-int.to.chr$ -- 2
+            796 strings with 8748 characters,
+and the built_in function-call counts, 6497 in all, are:
+= -- 445
+> -- 390
+< -- 5
++ -- 152
+- -- 141
+* -- 805
+:= -- 952
+add.period$ -- 26
+call.type$ -- 7
+change.case$ -- 82
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 418
+empty$ -- 388
+format.name$ -- 158
+if$ -- 1161
+int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 129
-newline$ -- 88
-num.names$ -- 52
-pop$ -- 218
+missing$ -- 98
+newline$ -- 55
+num.names$ -- 28
+pop$ -- 139
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 75
 quote$ -- 0
-skip$ -- 193
+skip$ -- 114
 stack$ -- 0
-substring$ -- 364
-swap$ -- 492
+substring$ -- 236
+swap$ -- 381
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 117
+type$ -- 63
 warning$ -- 0
-while$ -- 59
+while$ -- 36
 width$ -- 0
-write$ -- 212
+write$ -- 124

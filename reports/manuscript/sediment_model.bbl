@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -21,40 +21,13 @@
   \bibinfo{pages}{77--96}.
 \newblock \DOIprefix\doi{10/dpcnnc}.
 %Type = Article
-\bibitem[{Auerbach et~al.(2015)Auerbach, Goodbred~Jr., Mondal, Wilson, Ahmed,
-  Roy, Steckler, Small, Gilligan and Ackerly}]{auerbachFloodRiskNatural2015}
-\bibinfo{author}{Auerbach, L.W.}, \bibinfo{author}{Goodbred~Jr., S.},
-  \bibinfo{author}{Mondal, D.R.}, \bibinfo{author}{Wilson, C.A.},
-  \bibinfo{author}{Ahmed, K.R.}, \bibinfo{author}{Roy, K.},
-  \bibinfo{author}{Steckler, M.S.}, \bibinfo{author}{Small, C.},
-  \bibinfo{author}{Gilligan, J.M.}, \bibinfo{author}{Ackerly, B.A.},
-  \bibinfo{year}{2015}.
-\newblock \bibinfo{title}{Flood risk of natural and embanked landscapes on the
-  {{Ganges}}\textendash{{Brahmaputra}} tidal delta plain}.
-\newblock \bibinfo{journal}{Nature Climate Change} \bibinfo{volume}{5},
-  \bibinfo{pages}{153--157}.
-\newblock \DOIprefix\doi{10/gc3fxh}.
-%Type = Article
-\bibitem[{Bomer et~al.(2020)Bomer, Wilson, Hale, Hossain and
-  Rahman}]{bomerSurfaceElevationSedimentation2020}
-\bibinfo{author}{Bomer, E.J.}, \bibinfo{author}{Wilson, C.A.},
-  \bibinfo{author}{Hale, R.P.}, \bibinfo{author}{Hossain, A.N.M.},
-  \bibinfo{author}{Rahman, F.M.A.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Surface elevation and sedimentation dynamics in the
-  {{Ganges}}-{{Brahmaputra}} tidal delta plain, {{Bangladesh}}: {{Evidence}}
-  for mangrove adaptation to human-induced tidal amplification}.
-\newblock \bibinfo{journal}{CATENA} \bibinfo{volume}{187},
-  \bibinfo{pages}{104312}.
-\newblock \DOIprefix\doi{10/ggszhr}.
-%Type = Misc
-\bibitem[{{Center For International Earth Science Information
-  Network-CIESIN-Columbia
-  University}(2018)}]{centerforinternationalearthscienceinformationnetwork-ciesin-columbiauniversityPopulationEstimationService2018}
-\bibinfo{author}{{Center For International Earth Science Information
-  Network-CIESIN-Columbia University}}, \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{Population {{Estimation Service}}, {{Version}} 3
-  ({{PES}}-v3)}.
-\newblock \DOIprefix\doi{10.7927/H4DR2SK5}.
+\bibitem[{Dormand and Prunce(1980)}]{dormandFamilyEmbeddedRungeKutta1980}
+\bibinfo{author}{Dormand, J.}, \bibinfo{author}{Prunce, P.},
+  \bibinfo{year}{1980}.
+\newblock \bibinfo{title}{A family of embedded {{Runge}}-{{Kutta}} formulae}.
+\newblock \bibinfo{journal}{Journal of Computational and Applied Mathematics}
+  \bibinfo{volume}{6}, \bibinfo{pages}{19--26}.
+\newblock \DOIprefix\doi{10/cfw5fc}.
 %Type = Article
 \bibitem[{French(1993)}]{frenchNumericalSimulationVertical1993}
 \bibinfo{author}{French, J.R.}, \bibinfo{year}{1993}.
@@ -63,44 +36,6 @@
 \newblock \bibinfo{journal}{Earth Surface Processes and Landforms}
   \bibinfo{volume}{18}, \bibinfo{pages}{63--81}.
 \newblock \DOIprefix\doi{10/drw2f8}.
-%Type = Article
-\bibitem[{Hale et~al.(2019a)Hale, Bain, Goodbred~Jr. and
-  Best}]{haleObservationsScalingTidal2019}
-\bibinfo{author}{Hale, R.}, \bibinfo{author}{Bain, R.},
-  \bibinfo{author}{Goodbred~Jr., S.}, \bibinfo{author}{Best, J.},
-  \bibinfo{year}{2019}a.
-\newblock \bibinfo{title}{Observations and scaling of tidal mass transport
-  across the lower {{Ganges}}\textendash{{Brahmaputra}} delta plain:
-  Implications for delta management and sustainability}.
-\newblock \bibinfo{journal}{Earth Surface Dynamics} \bibinfo{volume}{7},
-  \bibinfo{pages}{231--245}.
-\newblock \DOIprefix\doi{10/gf2cdq}.
-%Type = Article
-\bibitem[{Hale et~al.(2019b)Hale, Wilson and
-  Bomer}]{haleSeasonalVariabilityForces2019}
-\bibinfo{author}{Hale, R.P.}, \bibinfo{author}{Wilson, C.A.},
-  \bibinfo{author}{Bomer, E.J.}, \bibinfo{year}{2019}b.
-\newblock \bibinfo{title}{Seasonal {{Variability}} of {{Forces Controlling
-  Sedimentation}} in the {{Sundarbans National Forest}}, {{Bangladesh}}}.
-\newblock \bibinfo{journal}{Frontiers in Earth Science} \bibinfo{volume}{7},
-  \bibinfo{pages}{211}.
-\newblock \DOIprefix\doi{10/ggjhb2}.
-%Type = Article
-\bibitem[{Higgins et~al.(2018)Higgins, Overeem, Rogers and
-  Kalina}]{higginsRiverLinkingIndia2018}
-\bibinfo{author}{Higgins, S.A.}, \bibinfo{author}{Overeem, I.},
-  \bibinfo{author}{Rogers, K.G.}, \bibinfo{author}{Kalina, E.A.},
-  \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{River linking in {{India}}: {{Downstream}} impacts on
-  water discharge and suspended sediment transport to deltas}.
-\newblock \bibinfo{journal}{Elem Sci Anth} \bibinfo{volume}{6},
-  \bibinfo{pages}{20}.
-\newblock \DOIprefix\doi{10/gc5tf8}.
-%Type = Misc
-\bibitem[{Kelley and Richards(2020)}]{kelleyOceAnalysisOceanographic2020}
-\bibinfo{author}{Kelley, D.}, \bibinfo{author}{Richards, C.},
-  \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Oce: {{Analysis}} of {{Oceanographic Data}}}.
 %Type = Inproceedings
 \bibitem[{Krone(1987)}]{kroneMethodSimulatingMarsh1987}
 \bibinfo{author}{Krone, R.}, \bibinfo{year}{1987}.
@@ -108,15 +43,6 @@
   in: \bibinfo{booktitle}{Coastal {{Sediments}}}, \bibinfo{publisher}{{American
   Society of Civil Engineers}}, \bibinfo{address}{{New Orleans, Louisiana}}.
   pp. \bibinfo{pages}{316--323}.
-%Type = Article
-\bibitem[{Pethick and Orford(2013)}]{pethickRapidRiseEffective2013}
-\bibinfo{author}{Pethick, J.}, \bibinfo{author}{Orford, J.D.},
-  \bibinfo{year}{2013}.
-\newblock \bibinfo{title}{Rapid rise in effective sea-level in southwest
-  {{Bangladesh}}: {{Its}} causes and contemporary rates}.
-\newblock \bibinfo{journal}{Global and Planetary Change} \bibinfo{volume}{111},
-  \bibinfo{pages}{237--245}.
-\newblock \DOIprefix\doi{10/s8h}.
 %Type = Article
 \bibitem[{Temmerman et~al.(2003)Temmerman, Govers, Meire and
   Wartel}]{temmermanModellingLongtermTidal2003}
@@ -141,5 +67,35 @@
 \newblock \bibinfo{journal}{Marine Geology} \bibinfo{volume}{212},
   \bibinfo{pages}{1--19}.
 \newblock \DOIprefix\doi{10/dsjcj6}.
+%Type = Article
+\bibitem[{Virtanen et~al.(2020)Virtanen, Gommers, Oliphant, Haberland, Reddy,
+  Cournapeau, Burovski, Peterson, Weckesser, Bright, {van der Walt}, Brett,
+  Wilson, Millman, Mayorov, Nelson, Jones, Kern, Larson, Carey, Polat, Feng,
+  Moore, VanderPlas, Laxalde, Perktold, Cimrman, Henriksen, Quintero, Harris,
+  Archibald, Ribeiro, Pedregosa and {van
+  Mulbregt}}]{virtanenSciPyFundamentalAlgorithms2020}
+\bibinfo{author}{Virtanen, P.}, \bibinfo{author}{Gommers, R.},
+  \bibinfo{author}{Oliphant, T.E.}, \bibinfo{author}{Haberland, M.},
+  \bibinfo{author}{Reddy, T.}, \bibinfo{author}{Cournapeau, D.},
+  \bibinfo{author}{Burovski, E.}, \bibinfo{author}{Peterson, P.},
+  \bibinfo{author}{Weckesser, W.}, \bibinfo{author}{Bright, J.},
+  \bibinfo{author}{{van der Walt}, S.J.}, \bibinfo{author}{Brett, M.},
+  \bibinfo{author}{Wilson, J.}, \bibinfo{author}{Millman, K.J.},
+  \bibinfo{author}{Mayorov, N.}, \bibinfo{author}{Nelson, A.R.J.},
+  \bibinfo{author}{Jones, E.}, \bibinfo{author}{Kern, R.},
+  \bibinfo{author}{Larson, E.}, \bibinfo{author}{Carey, C.J.},
+  \bibinfo{author}{Polat, {\.I}.}, \bibinfo{author}{Feng, Y.},
+  \bibinfo{author}{Moore, E.W.}, \bibinfo{author}{VanderPlas, J.},
+  \bibinfo{author}{Laxalde, D.}, \bibinfo{author}{Perktold, J.},
+  \bibinfo{author}{Cimrman, R.}, \bibinfo{author}{Henriksen, I.},
+  \bibinfo{author}{Quintero, E.A.}, \bibinfo{author}{Harris, C.R.},
+  \bibinfo{author}{Archibald, A.M.}, \bibinfo{author}{Ribeiro, A.H.},
+  \bibinfo{author}{Pedregosa, F.}, \bibinfo{author}{{van Mulbregt}, P.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{{SciPy}} 1.0: Fundamental algorithms for scientific
+  computing in {{Python}}}.
+\newblock \bibinfo{journal}{Nature Methods} \bibinfo{volume}{17},
+  \bibinfo{pages}{261--272}.
+\newblock \DOIprefix\doi{10/ggj45f}.
 
 \end{thebibliography}

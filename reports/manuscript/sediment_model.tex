@@ -3,9 +3,6 @@
 \documentclass[a4paper,fleqn]{cas-dc}
 \usepackage{natbib}
 
-%%%Author macros
-\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
-
 
 % User-defined preamble
 \usepackage[switch]{lineno}
@@ -34,7 +31,8 @@ scale-factor = 0.9
 \usepackage{siunitx}
 \DeclareSIUnit\year{yr}
 \DeclareSIUnit\foot{ft}
-\renewcommand{\equationautorefname}{Eq.}
+% \renewcommand{\equationautorefname}{Eq.}
+\usepackage{cleveref}
 
 \usepackage[
     protrusion=true,
@@ -60,12 +58,12 @@ scale-factor = 0.9
 \def\textpagefraction{.001}
 
 %% Insert pages
-\input{sections/0-frontmatter}
-\input{sections/1-introduction}
+% \input{sections/0-frontmatter}
+% \input{sections/1-introduction}
 \input{sections/2-methods}
-\input{sections/3-results}
-\input{sections/4-discussion}
-\input{sections/5-conclusions}
+% \input{sections/3-results}
+% \input{sections/4-discussion}
+% \input{sections/5-conclusions}
 \input{sections/6-backmatter}
 
 \end{document}
