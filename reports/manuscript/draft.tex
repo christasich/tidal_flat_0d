@@ -1,11 +1,12 @@
 %% Template Preamble
 
 % \documentclass[a4paper,fleqn]{cas-dc}
-\documentclass[letter]{cas-sc}
+\documentclass[letter]{article}
 \usepackage{natbib}
+\UseCollection{cas-sc}
 
 % User-defined preamble
-\usepackage{lineno}
+\usepackage[switch]{lineno}
 \linenumbers
 %% Patch 'normal' math environments:
 \newcommand*\linenomathpatch[1]{%
@@ -35,6 +36,7 @@ scale-factor = 0.9
 \usepackage{cleveref}
 \usepackage{todonotes}
 
+
 \usepackage[
     protrusion=true,
     activate={true,nocompatibility},
@@ -51,15 +53,12 @@ scale-factor = 0.9
 
 
 %% Begin document
-\shorttitle{DRAFT: Sediment model}
-\shortauthors{C.M. Tasich et~al.}
 \begin{document}
 \let\WriteBookmarks\relax
 \def\floatpagepagefraction{1}
 \def\textpagefraction{.001}
 
 %% Insert pages
-% \input{sections/0-frontmatter}
 % \input{sections/1-introduction}
 \input{sections/2-methods}
 % \input{sections/3-results}
