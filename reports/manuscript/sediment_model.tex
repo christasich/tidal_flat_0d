@@ -1,12 +1,36 @@
 %% Template Preamble
 
 % \documentclass[a4paper,fleqn]{cas-dc}
+% Temporary settings while drafting manuscript
 \documentclass[letter]{cas-sc}
-\usepackage{natbib}
+\geometry{outer=1.25in}
+\setcounter{section}{1}
 
-% User-defined preamble
+% Load packages
+\usepackage{natbib}
+\usepackage{cleveref}
+\usepackage{todonotes}
+
 \usepackage{lineno}
 \linenumbers
+
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\foot{ft}
+
+\usepackage[
+    protrusion=true,
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100,
+    stretch=10,
+    shrink=10,
+    ]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
+
 %% Patch 'normal' math environments:
 \newcommand*\linenomathpatch[1]{%
   \cspreto{#1}{\linenomath}%
@@ -28,35 +52,11 @@
 scale-factor = 0.9
 }
 \UseCollection{xfrac}{plainmath}
-\usepackage{siunitx}
-\DeclareSIUnit\year{yr}
-\DeclareSIUnit\foot{ft}
-% \renewcommand{\equationautorefname}{Eq.}
-\usepackage{cleveref}
-\usepackage{todonotes}
-
-\usepackage[
-    protrusion=true,
-    activate={true,nocompatibility},
-    final,
-    tracking=true,
-    kerning=true,
-    spacing=true,
-    factor=1100,
-    stretch=10,
-    shrink=10,
-    ]{microtype}
-\microtypecontext{spacing=nonfrench}
-\SetTracking{encoding={*}, shape=sc}{40}
-
 
 %% Begin document
 \shorttitle{DRAFT: Sediment model}
 \shortauthors{C.M. Tasich et~al.}
 \begin{document}
-\let\WriteBookmarks\relax
-\def\floatpagepagefraction{1}
-\def\textpagefraction{.001}
 
 %% Insert pages
 % \input{sections/0-frontmatter}
