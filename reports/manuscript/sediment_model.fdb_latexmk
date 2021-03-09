@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex sediment_model"] 1615001903 "sediment_model.aux" "sediment_model.bbl" "sediment_model" 1615002019
+["bibtex sediment_model"] 1615313434 "sediment_model.aux" "sediment_model.bbl" "sediment_model" 1615319898
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/els-cas-templates/cas-model2-names.bst" 1582668168 32010 5092d9c799f298db8b2e6703a7dbec58 ""
   "references.bib" 1614286089 74536 3d86c7dcb774c71d1a880dafe6bd45e2 ""
-  "sediment_model.aux" 1615002019 4272 0138b45e447c5a6b934a4207c4daa1f3 "pdflatex"
+  "sediment_model.aux" 1615319898 4663 1c86670996b24af0b664ed670252deaa "pdflatex"
   (generated)
   "sediment_model.blg"
   "sediment_model.bbl"
-["pdflatex"] 1615002017 "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.tex" "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.pdf" "sediment_model" 1615002019
-  "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.aux" 1615002019 4272 0138b45e447c5a6b934a4207c4daa1f3 ""
-  "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.tex" 1615002016 1474 2f079a4c0216db07a6c6cc0954e440c2 ""
+["pdflatex"] 1615319896 "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.tex" "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.pdf" "sediment_model" 1615319898
+  "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.aux" 1615319898 4663 1c86670996b24af0b664ed670252deaa ""
+  "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.tex" 1615319570 1622 88f1505c0222f29172c7c0d9ccfa4dd5 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc" 1388795362 7013 c55cc8669071ac14036c4a0c96c16202 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -232,16 +232,16 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1611115630 5154538 fc1a1d199e0b2968105492b98466c4b6 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1611115722 2568494 445fd88965a1fdac8b4993af05ef0026 ""
   "/usr/local/texlive/2020/texmf.cnf" 1599112780 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "sections/2-methods.tex" 1614286409 6761 e884638adb7fa030bb247a437ebdc31b ""
+  "sections/2-methods.tex" 1615319896 7148 355d3130428ead995c0374776a57d07d ""
   "sections/6-backmatter.tex" 1615000398 309 5143d600b67ba56b2d4c8849aacfb230 ""
-  "sediment_model.aux" 1615002019 4272 0138b45e447c5a6b934a4207c4daa1f3 "pdflatex"
-  "sediment_model.bbl" 1615001903 5885 bd4067997bd0cdbb15184c2b4511f472 "bibtex sediment_model"
-  "sediment_model.out" 1615002019 103 61f55197fb5c5200da44393f2acc2767 "pdflatex"
-  "sediment_model.tex" 1615002016 1474 2f079a4c0216db07a6c6cc0954e440c2 ""
+  "sediment_model.aux" 1615319898 4663 1c86670996b24af0b664ed670252deaa "pdflatex"
+  "sediment_model.bbl" 1615313434 5885 bd4067997bd0cdbb15184c2b4511f472 "bibtex sediment_model"
+  "sediment_model.out" 1615319898 103 61f55197fb5c5200da44393f2acc2767 "pdflatex"
+  "sediment_model.tex" 1615319570 1622 88f1505c0222f29172c7c0d9ccfa4dd5 ""
   (generated)
+  "sediment_model.pdf"
+  "sediment_model.log"
   "sediment_model.out"
+  "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.log"
   "sediment_model.aux"
   "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.pdf"
-  "sediment_model.pdf"
-  "/home/chris/projects/tidal_flat_0d/reports/manuscript/sediment_model.log"
-  "sediment_model.log"

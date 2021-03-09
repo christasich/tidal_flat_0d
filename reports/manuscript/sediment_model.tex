@@ -9,6 +9,12 @@
 % Load packages
 \usepackage{natbib}
 \usepackage{cleveref}
+\Crefname{equation}{Eq.}{Eqs.}
+\makeatletter
+\DeclareRobustCommand{\crefnosort}[1]{%
+  \begingroup\@cref@sortfalse\cref{#1}\endgroup
+}
+\makeatother
 \usepackage{todonotes}
 
 \usepackage{lineno}
