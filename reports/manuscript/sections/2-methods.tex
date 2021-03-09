@@ -44,7 +44,7 @@ The mass flux from the boundary term was constrained to only occur during flood 
 	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{H(S)}{h(t)} [C(t) - C_b]\frac{dh(t)}{dt}.
 \end{equation}
 
-Finally, we solved \crefnosort{eq:conc_sol,eq:sed_flux,eq:mass_bal} in that order. Our apporoach differs from previous studies in that we resolve each equation at every timestep. We do this by using a computationally efficient Runge-Kutta method which allows for a variable time step. The system of equations was solved using an explicit Runge-Kutta method of order 5(4) \citep{dormandFamilyEmbeddedRungeKutta1980} and implemented in Python using SciPy \citep{virtanenSciPyFundamentalAlgorithms2020}.
+Finally, we solved \crefnosort{eq:conc_sol,eq:sed_flux,eq:mass_bal} in that order. Our apporoach differs from previous studies in that we resolve each equation at every timestep. We do this by using a computationally efficient Runge-Kutta method which allows for a variable time step. The system of equations was solved using an explicit Runge-Kutta method of order 5(4) \citep{dormandFamilyEmbeddedRungeKutta1980} and implemented in Python using SciPy \citep{virtanenSciPyFundamentalAlgorithms2020}. \todo{Need to expand this?}
 
 % \subsection{Model inputs}
 
