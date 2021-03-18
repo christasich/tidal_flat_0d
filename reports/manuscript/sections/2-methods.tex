@@ -2,13 +2,13 @@
 
 \subsection{Model design}
 
-We modeled the vertical accretion of a tidal platform ($\sfrac{d\eta}{dt}$) using a zero-dimensional mass balance approach initially described by \citet{kroneMethodSimulatingMarsh1987} and validated by subsequent studies \citep{allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}. The rate of vertical accretion is described as
+We modeled the vertical accretion of a tidal platform ($\sfrac{d\eta}{dt}$) using a zero-dimensional mass balance approach initially described by \citet{kroneMethodSimulatingMarsh1987} and validated by subsequent studies \citep{allenSaltmarshGrowthStratification1990,frenchNumericalSimulationVertical1993,temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}. The rate of vertical accretion is described as
 \begin{equation}\label{eq:mass_bal}
 	\frac{d\eta(t)}{dt} = \frac{dS_m(t)}{dt} + \frac{dS_o(t)}{dt} + \frac{dP(t)}{dt} + \frac{dM(t)}{dt},
 \end{equation}
-where $\sfrac{dS_m(t)}{dt}$ is the rate of mineral sedimentation, $\sfrac{dS_o(t)}{dt}$ is the rate of organic matter sedimentation, $\sfrac{dP(t)}{dt}$ is the rate of compaction of the deposited sediment, and $\sfrac{dM(t)}{dt}$ is the rate of tectonic subsidence. Studies \todo{Need ref. Could also use a proportion of total sediment accumulation. Maybe unncessary. It likely gets internalized after model calibration. Maybe just combine $S_m$ and $S_o$?} have shown only \SI{\sim3}{\percent} of bulk sedimentation in the region comes from organic matter and therefore we chose to set $\sfrac{dS_o(t)}{dt}$ to zero. We also effectively internalized compaction by using dry bulk density within the mineral sedimentation term so we also set $\sfrac{dP(t)}{dt}$ to zero. Lastly, we set the $\sfrac{dM(t)}{dt}$ to \SI{6}{\milli\meter} which is consistent with measured rates of tectonic subsidence for the region \cite{higginsInSARMeasurementsCompaction2014a} \todo{Need to investigate further. Look into Steckler papers from 2010 and 2013.}. The remaining mineral sedimentation terms varies within a tidal cycle and requires additional steps.
+where $\sfrac{dS_m(t)}{dt}$ is the rate of mineral sedimentation, $\sfrac{dS_o(t)}{dt}$ is the rate of organic matter sedimentation, $\sfrac{dP(t)}{dt}$ is the rate of shallow compaction of the deposited sediment, and $\sfrac{dM(t)}{dt}$ is the rate of subsidence. We considered $\sfrac{dS_o(t)}{dt}$, $\sfrac{dP(t)}{dt}$, $\sfrac{dM(t)}{dt}$ to be constants and used characteristic yearly rates for each; while, $\sfrac{dS_m(t)}{dt}$ varies within a tidal cycle \citep{haleSeasonalVariabilityForces2019} and requires additional treatment.
 
-In order to solve $\sfrac{dS_m(t)}{dt}$, we began by conceptualizing a tidal platform periodically inundated by cyclical tides. We first defined depth to be
+To solve for $\sfrac{dS_m(t)}{dt}$, we began by conceptualizing a tidal platform periodically inundated by sinusoidal tides. We first defined depth to be
 \begin{equation}\label{eq:depth}
 	h(t) = \zeta(t) - \eta(t),
 \end{equation}
@@ -16,11 +16,11 @@ where $\zeta(t)$ is the water-surface elevation and $\eta(t)$ is the sediment-su
 \begin{equation}\label{eq:depth_dt}
 	\frac{dh(t)}{dt} = \frac{d\zeta(t)}{dt} - \frac{d\eta(t)}{dt}.
 \end{equation}
-Independently, we assume when $h(t) > 0$, the rate of mineral sedimentation is
+Independently, we assume while $h(t) > 0$, the rate of mineral sedimentation is
 \begin{equation}\label{eq:sed_flux}
 	\frac{dS_m(t)}{dt} = \frac{w_sC(t)}{\rho_b},
 \end{equation}
-where $w_s$ is the nominal settling velocity of a sediment grain, $C(t)$ is the depth-averaged suspended sediment concentration (SSC) in the water column, and $\rho_b$ is the bulk density of the sediment. We assumed no resuspension of mineral sediment which is practical and consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. We used Stoke's law to determine $w_s$. Stoke's law assumes unhindered settling which likely overestimates actual settling rates and, therefore, mineral sedimentation rates. However, we only considered settling for a singular, median grain size which likely underestimated mineral sedimentation rates from coarser grains. Model calibration further corrected for these errors. Thus, the $w_s$ given by Stoke's law should be considered an imprecise, but reasonable approximation. \todo{Need ref.}
+where $w_s$ is the nominal settling velocity of a sediment grain, $C(t)$ is the depth-averaged suspended sediment concentration (SSC) in the water column, and $\rho_b$ is the bulk density of the sediment. We assumed no resuspension of mineral sediment which is practical and consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}.
 
 In order to solve for $C(t)$ in \cref{eq:sed_flux}, we first defined a mass balance of sediment within the water column as
 \begin{equation}\label{eq:conc_mass_bal}
@@ -30,10 +30,9 @@ which can be expanded and rerranged as
 \begin{equation}\label{eq:conc_dt}
 	\frac{dC(t)}{dt} = - \frac{w_sC(t)}{h(t)} - \frac{1}{h(t)}[C(t) - C_b]\frac{dh(t)}{dt}.
 \end{equation}
-The mass flux from the boundary term was constrained to only occur during flood tide ($\sfrac{d\zeta}{dt} > 0$) which is consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. We formalized this mathematically using a Heaviside function which serves as a binary switch controlling the flux of sediment from the boundary. The Heaviside function is given as
+The mass flux from the boundary term was constrained to only occur during flood tide ($\sfrac{dh}{dt} > 0$) which is consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. We formalized this mathematically using a Heaviside function which serves as a binary switch controlling the flux of sediment from the boundary. The Heaviside function is given as
 \begin{equation}\label{eq:heaviside}
-	S = \frac{d\zeta}{dt},\\
-	H(S) =
+	S = \frac{dh}{dt},\quad	H(S) =
 	\begin{cases}
 		0 & \text{if $S < 0$}\\
 		1 & \text{if $S \geq 0$}.
@@ -43,16 +42,32 @@ The mass flux from the boundary term was constrained to only occur during flood 
 \begin{equation}\label{eq:conc_sol}
 	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{H(S)}{h(t)} [C(t) - C_b]\frac{dh(t)}{dt}.
 \end{equation}
+\Crefnosort{eq:conc_sol,eq:sed_flux,eq:mass_bal} can then be solved in that order to obtain the change in elevation.
 
-Finally, we solved \crefnosort{eq:conc_sol,eq:sed_flux,eq:mass_bal} in that order. Our apporoach differs from previous studies in that we resolve each equation at every timestep. We do this by using a computationally efficient Runge-Kutta method which allows for a variable time step. The system of equations was solved using an explicit Runge-Kutta method of order 5(4) \citep{dormandFamilyEmbeddedRungeKutta1980} and implemented in Python using SciPy \citep{virtanenSciPyFundamentalAlgorithms2020}. \todo{Need to expand this?}
+We integrated this series of equations for each inundation cycle using an explicit Runge-Kutta method of order 5(4) \citep{dormandFamilyEmbeddedRungeKutta1980} implemented in Python using SciPy \citep{virtanenSciPyFundamentalAlgorithms2020}. We used an adaptive step size which provided computational efficiency by decreasing step size as needed - i.e. beginning and end of an inundation cycle. To avoid numerical errors due to very small depths in \cref{eq:conc_sol}, we only allowed the model to integrate while water depths were \SI{>1}{\milli\meter}.
 
-% \subsection{Model inputs}
+We indentified indundation cycles by filtering the tidal curve for water-surface elevations that were above the current sediment-surface elevation. The time of first element of the filtered data was used to initialize the integration. The adaptive step size method required a continuous function for water-surface elevations so we converted the tidal data to an interpolated univariate spline during the integration. The integration continued until the water-surface elevation fell below the sediment-surface elevation. The new sediment-surface elevation was then used to identify the next inundation cycle. We repeated this process for all subsequent inundation cycles through the prescribed length of each simulation to obtain a final elevation.
 
-% We obtained model inputs from field measurements. We observed tidal height, grain size, suspended sediment concentration (SSC), and dry bulk density around Polder 32 over multiple field seasons from 2011 to 2016 \citep{auerbachFloodRiskNatural2015,haleObservationsScalingTidal2019,haleSeasonalVariabilityForces2019}.
+\subsection{Field observations and model parameters}
 
-% For $h$, we extracted one year of contiguous tidal data from from a pressure sensor deployed within the tidal channel near Polder 32. We used the oce package in R (3.6.3) to create an idealized tidal curve from our data \citep{kelleyOceAnalysisOceanographic2020}. The tidal curve was then shifted down so that mean higher high water would be \SI{~0.3}{\meter} above the Sundarban platform and \SI{~1.8}{\meter} above the polder surface ($\zeta$). We replicated this tidal curve for each subsequent year for the length of the model run. Field observations confirm these benchmark elevation \citep{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. In order to simulate sea level rise, the subsequent year tidal curves were increased at a linear rate of \SI{2}{\milli\meter\per\year} which is consistent with field observations.
+\bigskip
 
+\subsubsection*{Tidal data}
 
-% For $C_{in}$, we use observed values of SSC from Hale et al. \citep{haleObservationsScalingTidal2019} that are characteristic of the tidal channels in the region. Similar to Temmerman et al. \citep{temmermanModellingLongtermTidal2003,temmermanModellingEstuarineVariations2004}, we scaled the observed tidal channel SSC by a factor as the flood waters are expected to have a lower SSC than the tidal channel due to lower flow velocities. For our preliminary study, we use a k-factor of 0.7. In future model iterations, we will better explore this relationship and determine an appropriate k-factor.
+The tidal curve was derived from observations at Shutarkhali station. Water-surface elevations were collected every 10 minutes from January 1, 2019 to December 31, 2019 using an optical backscatter sensor (OBS). The data was processed and upsampled to \SI{1}{\second} temporal resolution using the oce package in R (3.6.3) \citep{kelleyOceAnalysisOceanographic2020}. The tidal curve was then calibrated by placing mean higher high water at \SI{~0.3}{\meter} above the Sundarban platform and \SI{~1.8}{\meter} above the polder surface which is consistent with survey data \citep{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. We repeated this tidal curve for each subsequent year of the simulation with a superimposed sea level rise rate of \SI{5}{\milli\meter\per\year}.
 
-% For $\rho$, we used values derived from conversations with Steven Goodbred and Carol Wilson.
+\subsubsection*{Organic matter, shallow compaction, and subsidence}
+
+\citet{bomerProcessControlsLive2020} found organic matter only accounts for $\sim$\SI{0.9(1)}{\percent} of the $\sim$\SI{2.42(26)}{\centi\meter\per\year} yearly bulk sedimentation. Using this, we set $\sfrac{dS_o(t)}{dt}$ to \SI{0.2}{\milli\meter\per\year}.
+
+Shallow compaction is difficult to constrain for the region and likely varies significantly due to natural variability in stratigraphy and anthropogenic activity (e.g. subsurface fluid extraction and accelerated oxidation of below-ground biomass due to drying of the sediment). \citet{auerbachFloodRiskNatural2015} suggested shallow compaction rates of \SI{0.4}{\centi\meter\per\year} for natural compaction and \SI{0.8}{\centi\meter\per\year} for accelerated compaction (combined natural and anthropogenic compaction). We adopted their values of $\sfrac{dP(t)}{dt}$.
+
+Estimates of subsidence vary for the region and are hard to disentangle from compaction. Many studies \citep{pethickRapidRiseEffective2013,goodbredSignificanceLargeSediment2000,stanleyHoloceneDepositionalPatterns2000} combine compaction and subsidence. Drawing from this literature and \citet{auerbachFloodRiskNatural2015} considered both compaction and subsidence separately by using values in the literature \citep{pethickRapidRiseEffective2013,goodbredSignificanceLargeSediment2000,stanleyHoloceneDepositionalPatterns2000} estimated subsidence to be \SI{0.3}{\centi\meter\per\year}. We set $\sfrac{dM(t)}{dt}$ to this value.
+
+\subsubsection*{Settling velocity, suspend sediment concentration, and bulk density}
+
+We used Stoke's law to determine $w_s$. Stoke's law assumes unhindered settling which likely overestimates actual settling rates and, therefore, mineral sedimentation rates. However, we only considered settling for a singular, median grain size which likely underestimated mineral sedimentation rates from coarser grains. Model calibration further corrected for these errors. Thus, the $w_s$ given by Stoke's law should be considered an imprecise, but reasonable approximation.
+
+For $C_{b}$, we use observed values of SSC from \citet{haleObservationsScalingTidal2019} that are characteristic of the tidal channels in the region.
+
+For $\rho$, we used values derived from conversations with Steven Goodbred and Carol Wilson.

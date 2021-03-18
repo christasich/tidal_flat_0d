@@ -4,7 +4,6 @@
 % Temporary settings while drafting manuscript
 \documentclass[letter]{cas-sc}
 \geometry{outer=1.25in}
-\setcounter{section}{1}
 
 % Load packages
 \usepackage{natbib}
@@ -15,6 +14,11 @@
   \begingroup\@cref@sortfalse\cref{#1}\endgroup
 }
 \makeatother
+\makeatletter
+\DeclareRobustCommand{\Crefnosort}[1]{%
+  \begingroup\@cref@sortfalse\Cref{#1}\endgroup
+}
+\makeatother
 \usepackage{todonotes}
 
 \usepackage{lineno}
@@ -23,6 +27,9 @@
 \usepackage{siunitx}
 \DeclareSIUnit\year{yr}
 \DeclareSIUnit\foot{ft}
+\sisetup{separate-uncertainty = true,
+  multi-part-units = repeat,
+  allow-number-unit-breaks=true}
 
 \usepackage[
     protrusion=true,
@@ -62,15 +69,18 @@ scale-factor = 0.9
 %% Begin document
 \shorttitle{DRAFT: Sediment model}
 \shortauthors{C.M. Tasich et~al.}
+
+
+\includeonly{sections/2-methods,sections/6-backmatter}
 \begin{document}
 
 %% Insert pages
-% \input{sections/0-frontmatter}
-% \input{sections/1-introduction}
-\input{sections/2-methods}
-% \input{sections/3-results}
-% \input{sections/4-discussion}
-% \input{sections/5-conclusions}
-\input{sections/6-backmatter}
+\include{sections/0-frontmatter}
+\include{sections/1-introduction}
+\include{sections/2-methods}
+\include{sections/3-results}
+\include{sections/4-discussion}
+\include{sections/5-conclusions}
+\include{sections/6-backmatter}
 
 \end{document}

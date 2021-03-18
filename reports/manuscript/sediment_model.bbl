@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -21,6 +21,51 @@
   \bibinfo{pages}{77--96}.
 \newblock \DOIprefix\doi{10/dpcnnc}.
 %Type = Article
+\bibitem[{Auerbach et~al.(2015)Auerbach, Goodbred~Jr, Mondal, Wilson, Ahmed,
+  Roy, Steckler, Small, Gilligan and Ackerly}]{auerbachFloodRiskNatural2015}
+\bibinfo{author}{Auerbach, L.W.}, \bibinfo{author}{Goodbred~Jr, S.L.},
+  \bibinfo{author}{Mondal, D.R.}, \bibinfo{author}{Wilson, C.A.},
+  \bibinfo{author}{Ahmed, K.R.}, \bibinfo{author}{Roy, K.},
+  \bibinfo{author}{Steckler, M.S.}, \bibinfo{author}{Small, C.},
+  \bibinfo{author}{Gilligan, J.M.}, \bibinfo{author}{Ackerly, B.A.},
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Flood risk of natural and embanked landscapes on the
+  {{Ganges}}\textendash{{Brahmaputra}} tidal delta plain}.
+\newblock \bibinfo{journal}{Nature Climate Change} \bibinfo{volume}{5},
+  \bibinfo{pages}{153--157}.
+\newblock \DOIprefix\doi{10/gc3fxh}.
+%Type = Article
+\bibitem[{Bomer et~al.(2020a)Bomer, Wilson and
+  {Elsey-Quirk}}]{bomerProcessControlsLive2020}
+\bibinfo{author}{Bomer, E.J.}, \bibinfo{author}{Wilson, C.A.},
+  \bibinfo{author}{{Elsey-Quirk}, T.}, \bibinfo{year}{2020}a.
+\newblock \bibinfo{title}{Process {{Controls}} of the {{Live Root Zone}} and
+  {{Carbon Sequestration Capacity}} of the {{Sundarbans Mangrove Forest}},
+  {{Bangladesh}}}.
+\newblock \bibinfo{journal}{Sci} \bibinfo{volume}{2}, \bibinfo{pages}{54}.
+\newblock \DOIprefix\doi{10/gjggj3}.
+%Type = Article
+\bibitem[{Bomer et~al.(2020b)Bomer, Wilson, Hale, Hossain and
+  Rahman}]{bomerSurfaceElevationSedimentation2020}
+\bibinfo{author}{Bomer, E.J.}, \bibinfo{author}{Wilson, C.A.},
+  \bibinfo{author}{Hale, R.P.}, \bibinfo{author}{Hossain, A.N.M.},
+  \bibinfo{author}{Rahman, F.M.A.}, \bibinfo{year}{2020}b.
+\newblock \bibinfo{title}{Surface elevation and sedimentation dynamics in the
+  {{Ganges}}-{{Brahmaputra}} tidal delta plain, {{Bangladesh}}: {{Evidence}}
+  for mangrove adaptation to human-induced tidal amplification}.
+\newblock \bibinfo{journal}{CATENA} \bibinfo{volume}{187},
+  \bibinfo{pages}{104312}.
+\newblock \DOIprefix\doi{10/ggszhr}.
+%Type = Misc
+\bibitem[{{Center For International Earth Science Information
+  Network-CIESIN-Columbia
+  University}(2018)}]{centerforinternationalearthscienceinformationnetwork-ciesin-columbiauniversityPopulationEstimationService2018}
+\bibinfo{author}{{Center For International Earth Science Information
+  Network-CIESIN-Columbia University}}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Population {{Estimation Service}}, {{Version}} 3
+  ({{PES}}-v3)}.
+\newblock \DOIprefix\doi{10.7927/H4DR2SK5}.
+%Type = Article
 \bibitem[{Dormand and Prunce(1980)}]{dormandFamilyEmbeddedRungeKutta1980}
 \bibinfo{author}{Dormand, J.}, \bibinfo{author}{Prunce, P.},
   \bibinfo{year}{1980}.
@@ -37,17 +82,54 @@
   \bibinfo{volume}{18}, \bibinfo{pages}{63--81}.
 \newblock \DOIprefix\doi{10/drw2f8}.
 %Type = Article
-\bibitem[{Higgins et~al.(2014)Higgins, Overeem, Steckler, Syvitski, Seeber and
-  Akhter}]{higginsInSARMeasurementsCompaction2014a}
+\bibitem[{Goodbred and Kuehl(2000)}]{goodbredSignificanceLargeSediment2000}
+\bibinfo{author}{Goodbred, S.}, \bibinfo{author}{Kuehl, S.A.},
+  \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{The significance of large sediment supply, active
+  tectonism, and eustasy on margin sequence development: {{Late Quaternary}}
+  stratigraphy and evolution of the {{Ganges}}\textendash{{Brahmaputra}}
+  delta}.
+\newblock \bibinfo{journal}{Sedimentary Geology} \bibinfo{volume}{133},
+  \bibinfo{pages}{227--248}.
+\newblock \DOIprefix\doi{10/fgb24h}.
+%Type = Article
+\bibitem[{Hale et~al.(2019a)Hale, Bain, Goodbred~Jr. and
+  Best}]{haleObservationsScalingTidal2019}
+\bibinfo{author}{Hale, R.}, \bibinfo{author}{Bain, R.},
+  \bibinfo{author}{Goodbred~Jr., S.}, \bibinfo{author}{Best, J.},
+  \bibinfo{year}{2019}a.
+\newblock \bibinfo{title}{Observations and scaling of tidal mass transport
+  across the lower {{Ganges}}\textendash{{Brahmaputra}} delta plain:
+  Implications for delta management and sustainability}.
+\newblock \bibinfo{journal}{Earth Surface Dynamics} \bibinfo{volume}{7},
+  \bibinfo{pages}{231--245}.
+\newblock \DOIprefix\doi{10/gf2cdq}.
+%Type = Article
+\bibitem[{Hale et~al.(2019b)Hale, Wilson and
+  Bomer}]{haleSeasonalVariabilityForces2019}
+\bibinfo{author}{Hale, R.P.}, \bibinfo{author}{Wilson, C.A.},
+  \bibinfo{author}{Bomer, E.J.}, \bibinfo{year}{2019}b.
+\newblock \bibinfo{title}{Seasonal {{Variability}} of {{Forces Controlling
+  Sedimentation}} in the {{Sundarbans National Forest}}, {{Bangladesh}}}.
+\newblock \bibinfo{journal}{Frontiers in Earth Science} \bibinfo{volume}{7},
+  \bibinfo{pages}{211}.
+\newblock \DOIprefix\doi{10/ggjhb2}.
+%Type = Article
+\bibitem[{Higgins et~al.(2018)Higgins, Overeem, Rogers and
+  Kalina}]{higginsRiverLinkingIndia2018}
 \bibinfo{author}{Higgins, S.A.}, \bibinfo{author}{Overeem, I.},
-  \bibinfo{author}{Steckler, M.S.}, \bibinfo{author}{Syvitski, J.P.M.},
-  \bibinfo{author}{Seeber, L.}, \bibinfo{author}{Akhter, S.H.},
-  \bibinfo{year}{2014}.
-\newblock \bibinfo{title}{{{InSAR}} measurements of compaction and subsidence
-  in the {{Ganges}}-{{Brahmaputra Delta}}, {{Bangladesh}}}.
-\newblock \bibinfo{journal}{Journal of Geophysical Research: Earth Surface}
-  \bibinfo{volume}{119}, \bibinfo{pages}{1768--1781}.
-\newblock \DOIprefix\doi{10/ghjtd3}.
+  \bibinfo{author}{Rogers, K.G.}, \bibinfo{author}{Kalina, E.A.},
+  \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{River linking in {{India}}: {{Downstream}} impacts on
+  water discharge and suspended sediment transport to deltas}.
+\newblock \bibinfo{journal}{Elem Sci Anth} \bibinfo{volume}{6},
+  \bibinfo{pages}{20}.
+\newblock \DOIprefix\doi{10/gc5tf8}.
+%Type = Misc
+\bibitem[{Kelley and Richards(2020)}]{kelleyOceAnalysisOceanographic2020}
+\bibinfo{author}{Kelley, D.}, \bibinfo{author}{Richards, C.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Oce: {{Analysis}} of {{Oceanographic Data}}}.
 %Type = Inproceedings
 \bibitem[{Krone(1987)}]{kroneMethodSimulatingMarsh1987}
 \bibinfo{author}{Krone, R.}, \bibinfo{year}{1987}.
@@ -55,6 +137,23 @@
   in: \bibinfo{booktitle}{Coastal {{Sediments}}}, \bibinfo{publisher}{{American
   Society of Civil Engineers}}, \bibinfo{address}{{New Orleans, Louisiana}}.
   pp. \bibinfo{pages}{316--323}.
+%Type = Article
+\bibitem[{Pethick and Orford(2013)}]{pethickRapidRiseEffective2013}
+\bibinfo{author}{Pethick, J.}, \bibinfo{author}{Orford, J.D.},
+  \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Rapid rise in effective sea-level in southwest
+  {{Bangladesh}}: {{Its}} causes and contemporary rates}.
+\newblock \bibinfo{journal}{Global and Planetary Change} \bibinfo{volume}{111},
+  \bibinfo{pages}{237--245}.
+\newblock \DOIprefix\doi{10/s8h}.
+%Type = Article
+\bibitem[{Stanley and Hait(2000)}]{stanleyHoloceneDepositionalPatterns2000}
+\bibinfo{author}{Stanley, D.J.}, \bibinfo{author}{Hait, A.K.},
+  \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Holocene {{Depositional Patterns}}, {{Neotectonics}}
+  and {{Sundarban Mangroves}} in the {{Western Ganges}}-{{Brahmaputra Delta}}}.
+\newblock \bibinfo{journal}{Journal of Coastal Research} \bibinfo{volume}{16},
+  \bibinfo{pages}{26--39}.
 %Type = Article
 \bibitem[{Temmerman et~al.(2003)Temmerman, Govers, Meire and
   Wartel}]{temmermanModellingLongtermTidal2003}
