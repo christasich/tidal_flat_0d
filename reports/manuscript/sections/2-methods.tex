@@ -6,7 +6,7 @@ We modeled the vertical accretion of a tidal platform ($\sfrac{d\eta}{dt}$) usin
 \begin{equation}\label{eq:mass_bal}
 	\frac{d\eta(t)}{dt} = \frac{dS_m(t)}{dt} + \frac{dS_o(t)}{dt} + \frac{dP(t)}{dt} + \frac{dM(t)}{dt},
 \end{equation}
-where $\sfrac{dS_m(t)}{dt}$ is the rate of mineral sedimentation, $\sfrac{dS_o(t)}{dt}$ is the rate of organic matter sedimentation, $\sfrac{dP(t)}{dt}$ is the rate of shallow compaction after dewatering of the deposited sediment, and $\sfrac{dM(t)}{dt}$ is the rate of subsidence. We considered $\sfrac{dS_o(t)}{dt}$, $\sfrac{dP(t)}{dt}$, $\sfrac{dM(t)}{dt}$ to be constants and used characteristic yearly rates for each; while, $\sfrac{dS_m(t)}{dt}$ varies within a tidal cycle \citep{haleSeasonalVariabilityForces2019} and requires additional treatment.
+where $\sfrac{dS_m(t)}{dt}$ is the rate of mineral sedimentation, $\sfrac{dS_o(t)}{dt}$ is the rate of organic matter sedimentation, $\sfrac{dP(t)}{dt}$ is the rate of shallow compaction after dewatering of the deposited sediment, and $\sfrac{dM(t)}{dt}$ is the rate of tectonic subsidence. We considered $\sfrac{dS_o(t)}{dt}$, $\sfrac{dP(t)}{dt}$, $\sfrac{dM(t)}{dt}$ to be constants and used characteristic yearly rates for each; while, $\sfrac{dS_m(t)}{dt}$ varies within a tidal cycle \citep{haleSeasonalVariabilityForces2019} and requires additional treatment.
 
 To solve for $\sfrac{dS_m(t)}{dt}$, we began by conceptualizing a tidal platform periodically inundated by sinusoidal tides. We first defined depth to be
 \begin{equation}\label{eq:depth}
@@ -30,7 +30,7 @@ which can be expanded and rerranged as
 \begin{equation}\label{eq:conc_dt}
 	\frac{dC(t)}{dt} = - \frac{w_sC(t)}{h(t)} - \frac{1}{h(t)}[C(t) - C_b]\frac{dh(t)}{dt}.
 \end{equation}
-The mass flux from the boundary term was constrained to only occur during flood tide ($\sfrac{dh}{dt} > 0$) which is consistent with previous studies \citep{kroneMethodSimulatingMarsh1987, allenSaltmarshGrowthStratification1990, frenchNumericalSimulationVertical1993, temmermanModellingLongtermTidal2003, temmermanModellingEstuarineVariations2004}. We formalized this mathematically using a Heaviside function which serves as a binary switch controlling the flux of sediment from the boundary. The Heaviside function is given as
+We assumed advection of new sediment to only occur during flood tide by constraining mass flux from the boundary term when $\sfrac{dh}{dt} > 0$. We formalized this mathematically using a Heaviside function which serves as a binary switch and is given as
 \begin{equation}\label{eq:heaviside}
 	S = \frac{dh}{dt},\quad	H(S) =
 	\begin{cases}
@@ -42,11 +42,11 @@ The mass flux from the boundary term was constrained to only occur during flood 
 \begin{equation}\label{eq:conc_sol}
 	\frac{dC(t)}{dt} = - \frac{w_s C(t)}{h(t)} - \frac{H(S)}{h(t)} [C(t) - C_b]\frac{dh(t)}{dt}.
 \end{equation}
-\Crefnosort{eq:conc_sol,eq:sed_flux,eq:mass_bal} can then be solved in that order to obtain the change in elevation.
+\Crefnosort{eq:conc_sol,eq:sed_flux,eq:mass_bal} were then solved in that order to obtain the change in elevation during one time step.
 
-We integrated this series of equations for each inundation cycle using an explicit Runge-Kutta method of order 5(4) \citep{dormandFamilyEmbeddedRungeKutta1980} implemented in Python using SciPy \citep{virtanenSciPyFundamentalAlgorithms2020}. We used an adaptive step size which provided computational efficiency by decreasing step size as needed - i.e. beginning and end of an inundation cycle. To avoid numerical errors due to very small depths in \cref{eq:conc_sol}, we only allowed the model to integrate while water depths were \SI{>1}{\milli\meter}.
+We integrated this series of equations for each inundation cycle using an explicit Runge-Kutta method of order 5(4) \citep{dormandFamilyEmbeddedRungeKutta1980} implemented in Python using SciPy \citep{virtanenSciPyFundamentalAlgorithms2020}. We used an adaptive step size which provided computational efficiency by decreasing step size as needed - i.e. beginning and end of an inundation cycle. To avoid numerical errors due to very small depths in \cref{eq:conc_sol}, we only allowed the model to integrate while water depths were \SI{>1}{\milli\meter}. Outside of the integration (i.e. while the platform was dry), we continued to apply linear rates for $\sfrac{dS_o(t)}{dt}$, $\sfrac{dP(t)}{dt}$, $\sfrac{dM(t)}{dt}$.
 
-We indentified indundation cycles by filtering the tidal curve for water-surface elevations that were above the current sediment-surface elevation. The time of first element of the filtered data was used to initialize the integration. The adaptive step size method required a continuous function for water-surface elevations so we converted the tidal data to an interpolated univariate spline during the integration. The integration continued until the water-surface elevation fell below the sediment-surface elevation. The new sediment-surface elevation was then used to identify the next inundation cycle. We repeated this process for all subsequent inundation cycles through the prescribed length of each simulation to obtain a final elevation.
+We indentified indundation cycles by filtering the tidal curve for water-surface elevations that were above the corresponding sediment-surface elevation. The time of first element of the filtered data was used to initialize the integration. The adaptive step size method required a continuous function for water-surface elevations so we converted the tidal data to an interpolated univariate spline during the integration. The integration continued until the water-surface elevation fell below the sediment-surface elevation. We repeated this process for all subsequent inundation cycles through the prescribed length of each simulation to obtain a final elevation.
 
 \subsection{Field observations and model parameters}
 
@@ -54,7 +54,7 @@ We indentified indundation cycles by filtering the tidal curve for water-surface
 
 \subsubsection*{Tidal data}
 
-The tidal curve was derived from observations at Sutarkhali station. Water-surface elevations were collected every 10 minutes from January 1, 2019 to December 31, 2019 using an Onset U20L-01 HOBO water level data logger. The data were processed and upsampled to \SI{1}{\second} temporal resolution using the oce package in R (3.6.3) \citep{kelleyOceAnalysisOceanographic2020}. The tidal curve was then shifted to place mean water at \SI{~1.6}{\meter} below the Sundarban sediment-surface which results in \SIrange{~50}{60}{\centi\meter} of inundation during spring high tides and is consistent with survey data \citep{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. We repeated this tidal curve for each subsequent year of the simulation with a superimposed sea level rise rate of \SI{5}{\milli\meter\per\year}.
+The tidal curve was derived from observations at Sutarkhali station. Water-surface elevations were collected every 10 minutes from January 1, 2019 to December 31, 2019 using an Onset U20L-01 HOBO water level data logger. The data were processed and upsampled to \SI{1}{\second} temporal resolution using the oce package in R (3.6.3) \citep{kelleyOceAnalysisOceanographic2020}. The tidal curve was then shifted to place mean water at \SI{~1.6}{\meter} below the Sundarban sediment-surface. This results in \SIrange{~50}{60}{\centi\meter} of inundation during most spring high tides and is consistent with survey data \citep{auerbachFloodRiskNatural2015,haleSeasonalVariabilityForces2019,bomerSurfaceElevationSedimentation2020}. We repeated this tidal curve for each subsequent year of the simulation with a superimposed sea level rise rate of \SI{5}{\milli\meter\per\year}.
 
 \subsubsection*{Organic matter, shallow compaction, and subsidence}
 
