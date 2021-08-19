@@ -1,0 +1,86 @@
+%% Template Preamble
+
+% \documentclass[a4paper,fleqn]{cas-dc}
+% Temporary settings while drafting manuscript
+\documentclass[letter]{cas-sc}
+\geometry{outer=1.25in}
+
+% Load packages
+\usepackage{natbib}
+\usepackage{cleveref}
+\Crefname{equation}{Eq.}{Eqs.}
+\makeatletter
+\DeclareRobustCommand{\crefnosort}[1]{%
+  \begingroup\@cref@sortfalse\cref{#1}\endgroup
+}
+\makeatother
+\makeatletter
+\DeclareRobustCommand{\Crefnosort}[1]{%
+  \begingroup\@cref@sortfalse\Cref{#1}\endgroup
+}
+\makeatother
+\usepackage{todonotes}
+
+\usepackage{lineno}
+\linenumbers
+
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\foot{ft}
+\sisetup{separate-uncertainty = true,
+  multi-part-units = repeat,
+  allow-number-unit-breaks=true}
+
+\usepackage[
+    protrusion=true,
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100,
+    stretch=10,
+    shrink=10,
+    ]{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
+
+%% Patch 'normal' math environments:
+\newcommand*\linenomathpatch[1]{%
+  \cspreto{#1}{\linenomath}%
+  \cspreto{#1*}{\linenomath}%
+  \cspreto{end#1}{\endlinenomath}%
+  \cspreto{end#1*}{\endlinenomath}%
+}
+
+\linenomathpatch{equation}
+\linenomathpatch{gather}
+\linenomathpatch{multline}
+\linenomathpatch{align}
+\linenomathpatch{alignat}
+\linenomathpatch{flalign}
+
+\usepackage{xfrac}
+\DeclareCollectionInstance{plainmath}{xfrac}{mathdefault}{math}
+{
+scale-factor = 0.9
+}
+\UseCollection{xfrac}{plainmath}
+
+%% Begin document
+\shorttitle{DRAFT: Sediment model}
+\shortauthors{C.M. Tasich et~al.}
+
+
+\includeonly{sections/1-introduction, sections/2-methods,sections/6-backmatter}
+\begin{document}
+
+%% Insert pages
+\include{sections/0-frontmatter}
+\include{sections/1-introduction}
+\include{sections/2-methods}
+\include{sections/3-results}
+\include{sections/4-discussion}
+\include{sections/5-conclusions}
+\include{sections/6-backmatter}
+
+\end{document}
